@@ -17,12 +17,25 @@ export default function Home() {
           <span className="brand-mark">R</span>
           <span><strong>RHINO</strong><small>SITEWORKS</small></span>
         </a>
-        <nav>
+
+        <nav className="desktop-nav" aria-label="Primary navigation">
           <a href="#services">Services</a>
           <a href="#work">Our Work</a>
           <a href="#about">About</a>
+          <a href="#estimate">Estimate</a>
           <a className="nav-cta" href="tel:3347077874">Call 334-707-7874</a>
         </nav>
+
+        <details className="mobile-menu">
+          <summary aria-label="Open site menu">Menu</summary>
+          <nav aria-label="Mobile navigation">
+            <a href="#services">Services</a>
+            <a href="#work">Our Work</a>
+            <a href="#about">About</a>
+            <a href="#estimate">Request an Estimate</a>
+            <a href="tel:3347077874">Call 334-707-7874</a>
+          </nav>
+        </details>
       </header>
 
       <section className="hero" id="top">
@@ -32,7 +45,7 @@ export default function Home() {
           <h1>Make Your Property <span>Work Better.</span></h1>
           <p className="hero-copy">Land clearing, forestry mulching, grading, drainage, gravel work, and property reclamation completed with practical solutions and dependable equipment.</p>
           <div className="hero-actions">
-            <a className="button primary" href="tel:3347077874">Request an Estimate</a>
+            <a className="button primary" href="#estimate">Request an Estimate</a>
             <a className="button secondary" href="#services">Explore Services</a>
           </div>
         </div>
@@ -66,7 +79,7 @@ export default function Home() {
               <span>{String(index + 1).padStart(2, '0')}</span>
               <h3>{title}</h3>
               <p>{copy}</p>
-              <a href="tel:3347077874">Discuss this service →</a>
+              <a href="#estimate">Discuss this service →</a>
             </article>
           ))}
         </div>
@@ -77,7 +90,7 @@ export default function Home() {
           <p className="eyebrow">Property transformation</p>
           <h2>Clear the problem. Shape the solution.</h2>
           <p>From thick overgrowth and uneven terrain to washed-out drives and standing water, Rhino Siteworks helps turn property problems into usable ground.</p>
-          <a className="button primary" href="tel:3347077874">Talk About Your Project</a>
+          <a className="button primary" href="#estimate">Talk About Your Project</a>
         </div>
         <div className="project-collage" aria-label="Rhino Siteworks project gallery">
           <div className="photo photo-one" />
@@ -99,6 +112,43 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="estimate-section" id="estimate">
+        <div className="estimate-copy">
+          <p className="eyebrow">Free project estimate</p>
+          <h2>Tell Us About Your Property.</h2>
+          <p>Send the basics below and Rhino Siteworks will follow up to discuss access, scope, timing, and the best next step for your project.</p>
+          <div className="contact-note">
+            <strong>Prefer to talk now?</strong>
+            <a href="tel:3347077874">334-707-7874</a>
+            <a href="mailto:WeGoRhino@gmail.com">WeGoRhino@gmail.com</a>
+          </div>
+        </div>
+
+        <form className="estimate-form" name="estimate-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+          <input type="hidden" name="form-name" value="estimate-request" />
+          <p className="hidden-field"><label>Do not fill this out: <input name="bot-field" /></label></p>
+
+          <div className="field-row">
+            <label>Full name<input required name="name" type="text" autoComplete="name" /></label>
+            <label>Phone number<input required name="phone" type="tel" autoComplete="tel" /></label>
+          </div>
+          <div className="field-row">
+            <label>Email address<input required name="email" type="email" autoComplete="email" /></label>
+            <label>Property location<input name="property-location" type="text" placeholder="City, county, or address" /></label>
+          </div>
+          <label>Service needed
+            <select required name="service" defaultValue="">
+              <option value="" disabled>Select a service</option>
+              {services.map(([title]) => <option key={title} value={title}>{title}</option>)}
+            </select>
+          </label>
+          <label>Project details<textarea required name="project-details" rows={6} placeholder="Describe the property, the problem, and what you want completed." /></label>
+          <label>Best time to contact<input name="best-time" type="text" placeholder="Morning, afternoon, or evening" /></label>
+          <button className="button primary submit-button" type="submit">Send Estimate Request</button>
+          <p className="form-note">Your request will be securely submitted through Netlify Forms.</p>
+        </form>
+      </section>
+
       <section className="cta-section">
         <div>
           <p className="eyebrow">Have a property project in mind?</p>
@@ -113,8 +163,8 @@ export default function Home() {
 
       <footer>
         <div className="footer-brand"><span className="brand-mark">R</span><div><strong>RHINO SITEWORKS</strong><p>Land clearing, grading, drainage, and property improvement.</p></div></div>
-        <div><strong>Contact</strong><a href="tel:3347077874">334-707-7874</a><a href="mailto:WeGoRhino@gmail.com">WeGoRhino@gmail.com</a></div>
-        <div><strong>Location</strong><p>108 Fletcher Segrest Road<br />Tuskegee, AL 36083</p></div>
+        <div><strong>Navigation</strong><a href="#services">Services</a><a href="#work">Our Work</a><a href="#about">About</a><a href="#estimate">Estimate</a></div>
+        <div><strong>Contact</strong><a href="tel:3347077874">334-707-7874</a><a href="mailto:WeGoRhino@gmail.com">WeGoRhino@gmail.com</a><p>108 Fletcher Segrest Road<br />Tuskegee, AL 36083</p></div>
         <p className="copyright">© {new Date().getFullYear()} Rhino Siteworks. All rights reserved.</p>
       </footer>
     </main>
