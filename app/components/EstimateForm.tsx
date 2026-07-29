@@ -22,12 +22,17 @@ export default function EstimateForm() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
+    const encoded = new URLSearchParams();
+
+    formData.forEach((value, key) => {
+      if (typeof value === 'string') encoded.append(key, value);
+    });
 
     try {
       const response = await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
+        body: encoded.toString(),
       });
 
       if (!response.ok) throw new Error('Form submission failed');
