@@ -1,8 +1,7 @@
-node_modules
 .next
-out
-dist
-.env
-.env.local
-.DS_Store
-*.log
+node_modules
+.netlify
+.env*
+!.env.example
+npm-debug.log*
+*.tsbuildinfo

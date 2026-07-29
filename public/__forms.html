@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8"><title>Form registration</title></head>
+  <body>
+    <!-- Netlify scans this static HTML file at deploy time. The visible React form posts here. -->
+    <form name="estimate-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+      <input type="hidden" name="form-name" value="estimate-request">
+      <input name="bot-field">
+      <input name="name">
+      <input name="phone">
+      <input name="email">
+      <input name="property-location">
+      <select name="service"><option>Other</option></select>
+      <textarea name="project-details"></textarea>
+    </form>
+  </body>
+</html>

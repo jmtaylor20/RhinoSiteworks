@@ -1,172 +1,105 @@
-const services = [
-  ['Land Clearing', 'Clear wooded, overgrown, or unusable areas to prepare your property for construction, pasture, access, or a fresh start.'],
-  ['Forestry Mulching', 'Turn brush and unwanted vegetation into ground-covering mulch with less hauling and site disturbance.'],
-  ['Dirt Work & Grading', 'Shape, level, and stabilize your property for building pads, yards, roads, drainage, and other site needs.'],
-  ['Water Drainage', 'Correct runoff, standing water, erosion, and washouts with practical drainage solutions built for your property.'],
-  ['Gravel Driveways', 'Build, repair, and regrade gravel driveways and access roads for dependable everyday use.'],
-  ['Property Reclamation', 'Restore neglected or overgrown land and make it safer, cleaner, and more useful again.'],
-  ['Yard Leveling & Sod Prep', 'Prepare uneven or damaged yards for sod, seed, landscaping, or improved outdoor use.'],
-  ['Special Projects', 'Need something that does not fit a standard category? Tell us what the property needs and we will evaluate it.'],
-];
+import Image from 'next/image';
+import Link from 'next/link';
+import { ButtonLink } from '@/components/ButtonLink';
+import { EstimateForm } from '@/components/EstimateForm';
+import { SectionHeading } from '@/components/SectionHeading';
+import { services } from '@/data/services';
+import { testimonials } from '@/data/testimonials';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="Rhino Siteworks home">
-          <span className="brand-mark">R</span>
-          <span><strong>RHINO</strong><small>SITEWORKS</small></span>
-        </a>
-
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="#services">Services</a>
-          <a href="#work">Our Work</a>
-          <a href="#about">About</a>
-          <a href="#estimate">Estimate</a>
-          <a className="nav-cta" href="tel:3347077874">Call 334-707-7874</a>
-        </nav>
-
-        <details className="mobile-menu">
-          <summary aria-label="Open site menu">Menu</summary>
-          <nav aria-label="Mobile navigation">
-            <a href="#services">Services</a>
-            <a href="#work">Our Work</a>
-            <a href="#about">About</a>
-            <a href="#estimate">Request an Estimate</a>
-            <a href="tel:3347077874">Call 334-707-7874</a>
-          </nav>
-        </details>
-      </header>
-
-      <section className="hero" id="top">
-        <div className="hero-overlay" />
-        <div className="hero-content">
-          <p className="eyebrow">East Alabama land and site services</p>
-          <h1>Make Your Property <span>Work Better.</span></h1>
-          <p className="hero-copy">Land clearing, forestry mulching, grading, drainage, gravel work, and property reclamation completed with practical solutions and dependable equipment.</p>
-          <div className="hero-actions">
-            <a className="button primary" href="#estimate">Request an Estimate</a>
-            <a className="button secondary" href="#services">Explore Services</a>
+    <>
+      <section className="relative isolate min-h-[720px] overflow-hidden bg-brand-forest text-white">
+        <Image src="/images/project-hero.webp" alt="Rhino Siteworks equipment improving rural property" fill priority sizes="100vw" className="object-cover" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,31,23,.94)_0%,rgba(7,31,23,.76)_48%,rgba(7,31,23,.2)_100%)]" />
+        <div className="container-shell relative flex min-h-[720px] items-center py-24">
+          <div className="max-w-3xl">
+            <p className="eyebrow text-brand-gold">East Alabama land & site services</p>
+            <h1 className="mt-5 text-5xl font-black uppercase leading-[0.98] sm:text-7xl lg:text-8xl">
+              Make your property <span className="text-brand-gold">work better.</span>
+            </h1>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/80 sm:text-xl">
+              Land clearing, forestry mulching, grading, drainage, gravel work, and property reclamation—planned around your land and the result you need.
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href="/contact">Request an estimate</ButtonLink>
+              <ButtonLink href="/services" variant="secondary">Explore services</ButtonLink>
+            </div>
           </div>
         </div>
-        <div className="hero-stat"><strong>Built for the land.</strong><span>Focused on the result.</span></div>
       </section>
 
-      <section className="trust-strip">
-        <span>Land Clearing</span><span>Forestry Mulching</span><span>Grading</span><span>Drainage</span><span>Gravel</span>
-      </section>
+      <div className="bg-brand-gold text-brand-ink">
+        <div className="container-shell flex flex-wrap justify-center gap-x-10 gap-y-3 py-5 text-sm font-black uppercase tracking-[0.12em]">
+          <span>Land clearing</span><span>Forestry mulching</span><span>Grading</span><span>Drainage</span><span>Gravel</span>
+        </div>
+      </div>
 
-      <section className="section intro" id="about">
-        <div>
-          <p className="eyebrow dark">Rhino Siteworks</p>
-          <h2>From Overgrown to Ready.</h2>
-        </div>
-        <div>
-          <p>Every property has different challenges. Rhino Siteworks looks at the full site, listens to what you want to accomplish, and recommends a sensible path forward.</p>
-          <p>Whether you are reclaiming acreage, correcting drainage, opening access, or preparing for a new project, the goal is straightforward: clean work, clear communication, and a result you can use.</p>
-        </div>
-      </section>
-
-      <section className="section services" id="services">
-        <div className="section-heading">
-          <p className="eyebrow dark">What we do</p>
-          <h2>Sitework Solutions for Real Property Needs</h2>
-          <p>No generic promises. Just the services property owners need to improve access, function, safety, and appearance.</p>
-        </div>
-        <div className="service-grid">
-          {services.map(([title, copy], index) => (
-            <article className="service-card" key={title}>
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <h3>{title}</h3>
-              <p>{copy}</p>
-              <a href="#estimate">Discuss this service →</a>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="project-band" id="work">
-        <div className="project-copy">
-          <p className="eyebrow">Property transformation</p>
-          <h2>Clear the problem. Shape the solution.</h2>
-          <p>From thick overgrowth and uneven terrain to washed-out drives and standing water, Rhino Siteworks helps turn property problems into usable ground.</p>
-          <a className="button primary" href="#estimate">Talk About Your Project</a>
-        </div>
-        <div className="project-collage" aria-label="Rhino Siteworks project gallery">
-          <div className="photo photo-one" />
-          <div className="photo photo-two" />
-          <div className="photo photo-three" />
-        </div>
-      </section>
-
-      <section className="section process">
-        <div className="section-heading compact">
-          <p className="eyebrow dark">Simple process</p>
-          <h2>A Clear Path From First Call to Finished Work</h2>
-        </div>
-        <div className="steps">
-          <div><strong>01</strong><h3>Tell Us the Need</h3><p>Share the location, problem, goal, and any photos that help explain the site.</p></div>
-          <div><strong>02</strong><h3>Review the Property</h3><p>We evaluate access, terrain, drainage, vegetation, and the equipment needed.</p></div>
-          <div><strong>03</strong><h3>Approve the Plan</h3><p>You receive a clear scope so everyone understands the work before it begins.</p></div>
-          <div><strong>04</strong><h3>Transform the Site</h3><p>We complete the work with attention to function, safety, and the finished property.</p></div>
-        </div>
-      </section>
-
-      <section className="estimate-section" id="estimate">
-        <div className="estimate-copy">
-          <p className="eyebrow">Free project estimate</p>
-          <h2>Tell Us About Your Property.</h2>
-          <p>Send the basics below and Rhino Siteworks will follow up to discuss access, scope, timing, and the best next step for your project.</p>
-          <div className="contact-note">
-            <strong>Prefer to talk now?</strong>
-            <a href="tel:3347077874">334-707-7874</a>
-            <a href="mailto:WeGoRhino@gmail.com">WeGoRhino@gmail.com</a>
+      <section id="about" className="section-space">
+        <div className="container-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
+          <SectionHeading eyebrow="Rhino Siteworks" title="From overgrown to ready." />
+          <div className="grid gap-6 text-lg leading-8 text-slate-600">
+            <p>Every property has different challenges. We look at the full site, listen to what you want to accomplish, and recommend a sensible path forward.</p>
+            <p>Whether you are reclaiming acreage, correcting drainage, opening access, or preparing for a project, the goal is straightforward: clean work, clear communication, and a result you can use.</p>
           </div>
         </div>
-
-        <form className="estimate-form" name="estimate-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
-          <input type="hidden" name="form-name" value="estimate-request" />
-          <p className="hidden-field"><label>Do not fill this out: <input name="bot-field" /></label></p>
-
-          <div className="field-row">
-            <label>Full name<input required name="name" type="text" autoComplete="name" /></label>
-            <label>Phone number<input required name="phone" type="tel" autoComplete="tel" /></label>
-          </div>
-          <div className="field-row">
-            <label>Email address<input required name="email" type="email" autoComplete="email" /></label>
-            <label>Property location<input name="property-location" type="text" placeholder="City, county, or address" /></label>
-          </div>
-          <label>Service needed
-            <select required name="service" defaultValue="">
-              <option value="" disabled>Select a service</option>
-              {services.map(([title]) => <option key={title} value={title}>{title}</option>)}
-            </select>
-          </label>
-          <label>Project details<textarea required name="project-details" rows={6} placeholder="Describe the property, the problem, and what you want completed." /></label>
-          <label>Best time to contact<input name="best-time" type="text" placeholder="Morning, afternoon, or evening" /></label>
-          <button className="button primary submit-button" type="submit">Send Estimate Request</button>
-          <p className="form-note">Your request will be securely submitted through Netlify Forms.</p>
-        </form>
       </section>
 
-      <section className="cta-section">
-        <div>
-          <p className="eyebrow">Have a property project in mind?</p>
-          <h2>Let’s Take a Look at the Land.</h2>
-          <p>Call or email Rhino Siteworks to discuss your project and request an estimate.</p>
-        </div>
-        <div className="cta-actions">
-          <a className="button light" href="tel:3347077874">334-707-7874</a>
-          <a className="button outline-light" href="mailto:WeGoRhino@gmail.com">WeGoRhino@gmail.com</a>
+      <section className="section-space bg-brand-cream">
+        <div className="container-shell">
+          <SectionHeading eyebrow="What we do" title="Sitework solutions for real property needs" copy="Services designed to improve access, function, safety, drainage, and the way your land looks." />
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {services.map((service, index) => (
+              <article key={service.slug} className="group flex min-h-72 flex-col border border-brand-forest/10 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lift">
+                <span className="text-sm font-black tracking-[0.18em] text-brand-green">{String(index + 1).padStart(2, '0')}</span>
+                <h3 className="mt-6 text-2xl font-black uppercase">{service.title}</h3>
+                <p className="mt-4 leading-7 text-slate-600">{service.shortDescription}</p>
+                <Link href={`/services/${service.slug}`} className="mt-auto pt-7 font-black text-brand-green group-hover:text-brand-forest">Explore service →</Link>
+              </article>
+            ))}
+          </div>
+          <ButtonLink href="/services" className="mt-8">View all services</ButtonLink>
         </div>
       </section>
 
-      <footer>
-        <div className="footer-brand"><span className="brand-mark">R</span><div><strong>RHINO SITEWORKS</strong><p>Land clearing, grading, drainage, and property improvement.</p></div></div>
-        <div><strong>Navigation</strong><a href="#services">Services</a><a href="#work">Our Work</a><a href="#about">About</a><a href="#estimate">Estimate</a></div>
-        <div><strong>Contact</strong><a href="tel:3347077874">334-707-7874</a><a href="mailto:WeGoRhino@gmail.com">WeGoRhino@gmail.com</a><p>108 Fletcher Segrest Road<br />Tuskegee, AL 36083</p></div>
-        <p className="copyright">© {new Date().getFullYear()} Rhino Siteworks. All rights reserved.</p>
-      </footer>
-    </main>
+      <section className="bg-brand-forest text-white">
+        <div className="grid lg:grid-cols-2">
+          <div className="flex items-center px-5 py-20 sm:px-10 lg:px-[max(2.5rem,calc((100vw-80rem)/2))]">
+            <div className="max-w-2xl">
+              <SectionHeading light eyebrow="Property transformation" title="Clear the problem. Shape the solution." copy="From thick overgrowth and uneven terrain to washed-out drives and standing water, Rhino Siteworks turns property problems into usable ground." />
+              <ButtonLink href="/contact" className="mt-8">Talk about your project</ButtonLink>
+            </div>
+          </div>
+          <div className="grid min-h-[520px] grid-cols-2 grid-rows-2 gap-1">
+            <Image src="/images/project-18.webp" alt="Land clearing project" width={900} height={700} className="h-full w-full object-cover" />
+            <Image src="/images/project-19.webp" alt="Forestry and sitework project" width={900} height={700} className="row-span-2 h-full w-full object-cover" />
+            <Image src="/images/project-20.webp" alt="Completed property improvement" width={900} height={700} className="h-full w-full object-cover" />
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" className="section-space">
+        <div className="container-shell">
+          <SectionHeading eyebrow="What property owners value" title="Dependable work starts with clear communication" />
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {testimonials.map((testimonial) => (
+              <figure key={testimonial.name} className="border-t-4 border-brand-gold bg-brand-cream p-7">
+                <blockquote className="text-lg leading-8 text-slate-700">“{testimonial.quote}”</blockquote>
+                <figcaption className="mt-6 text-sm font-black uppercase tracking-wider text-brand-green">{testimonial.name}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space bg-brand-green text-white">
+        <div className="container-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
+          <div>
+            <SectionHeading light eyebrow="Free project estimate" title="Tell us about your property." copy="Send the basics and Rhino Siteworks will follow up about access, scope, timing, and the best next step." />
+          </div>
+          <EstimateForm />
+        </div>
+      </section>
+    </>
   );
 }
