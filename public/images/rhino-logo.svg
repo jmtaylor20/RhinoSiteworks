@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 260" role="img" aria-labelledby="title desc">
+  <title id="title">Rhino Siteworks</title><desc id="desc">Rhino Siteworks gold and green logo</desc>
+  <rect width="980" height="260" rx="20" fill="#183f22"/>
+  <g fill="#f2b914">
+    <path d="M55 55h105a18 18 0 0 1 18 18v132a18 18 0 0 1-18 18h-27c-7 0-12-6-10-13 20-64 27-114 17-145-3-9-14-10-19-2l-55 96c-5 8-15 3-12-6l13-39c3-10-10-15-15-6L37 192c-4 8-12 5-12-4V73a18 18 0 0 1 18-18h12z"/>
+    <text x="220" y="155" font-family="Arial,Helvetica,sans-serif" font-size="128" font-weight="900" letter-spacing="8">RHINO</text>
+  </g>
+  <text x="224" y="220" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="48" font-weight="800" letter-spacing="22">SITEWORKS</text>
+</svg>
