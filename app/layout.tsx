@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: ['/opengraph-image'],
   },
+  other: {
+    'theme-color': '#092d22',
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

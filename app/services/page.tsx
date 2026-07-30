@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
+import { BeforeAfter } from '@/components/BeforeAfter';
 import { ButtonLink } from '@/components/ButtonLink';
-import { PageHero } from '@/components/PageHero';
 import { services } from '@/data/services';
 
 export const metadata: Metadata = {
@@ -13,21 +14,46 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <PageHero eyebrow="Capabilities" title="Land and sitework services" copy="Practical equipment solutions for property owners, builders, farms, and rural sites across East Alabama." />
-      <section className="section-space">
-        <div className="container-shell grid gap-6 md:grid-cols-2">
+      <section className="relative overflow-hidden bg-brand-forest py-20 text-white sm:py-28">
+        <Image src="/images/project-hero.webp" alt="" fill priority sizes="100vw" className="object-cover opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-forest via-brand-forest/90 to-brand-forest/50" />
+        <div className="container-shell relative grid items-center gap-10 lg:grid-cols-[1fr_360px]">
+          <div>
+            <p className="eyebrow text-brand-gold">Capabilities</p>
+            <h1 className="mt-4 max-w-4xl text-5xl font-black uppercase leading-tight sm:text-7xl">Land shaped around what comes next</h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/75">Practical equipment solutions for property owners, builders, farms, and rural sites across East Alabama.</p>
+          </div>
+          <Image src="/images/rhino-stacked-logo.png" alt="Rhino Siteworks" width={1080} height={1080} className="hidden w-full max-w-sm justify-self-end lg:block" />
+        </div>
+      </section>
+      <section className="section-space bg-brand-cream">
+        <div className="container-shell">
+          <div className="mb-12 grid gap-6 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
+            <p className="eyebrow text-brand-green">Choose the outcome—not a box</p>
+            <p className="text-lg leading-8 text-slate-600">Most projects use more than one capability. We start with the property problem, then combine the right clearing, grading, drainage, and access work into one sensible plan.</p>
+          </div>
+          <div className="divide-y divide-brand-forest/15 border-y border-brand-forest/15">
           {services.map((service) => (
-            <article key={service.slug} className="border border-slate-200 p-8">
-              <h2 className="text-3xl font-black uppercase">{service.title}</h2>
-              <p className="mt-4 leading-7 text-slate-600">{service.shortDescription}</p>
-              <ul className="mt-6 grid gap-2 text-sm font-bold text-brand-green">
+            <article key={service.slug} className="group grid gap-5 py-8 transition md:grid-cols-[.8fr_1.2fr_auto] md:items-center">
+              <h2 className="text-3xl font-black uppercase transition group-hover:text-brand-green">{service.title}</h2>
+              <div>
+                <p className="leading-7 text-slate-600">{service.shortDescription}</p>
+                <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-bold text-brand-green">
                 {service.benefits.map((benefit) => <li key={benefit}>✓ {benefit}</li>)}
               </ul>
-              <Link href={`/services/${service.slug}`} className="mt-7 inline-block font-black text-brand-green">Learn more →</Link>
+              </div>
+              <Link href={`/services/${service.slug}`} className="inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-green text-2xl font-black text-brand-green transition group-hover:bg-brand-green group-hover:text-white" aria-label={`Learn more about ${service.title}`}>→</Link>
             </article>
           ))}
+          </div>
+          <ButtonLink href="/contact" className="mt-10">Request an estimate</ButtonLink>
         </div>
-        <ButtonLink href="/contact" className="mt-10">Request an estimate</ButtonLink>
+      </section>
+      <section className="section-space">
+        <div className="container-shell grid gap-10">
+          <BeforeAfter before="/images/project-18.webp" after="/images/project-19.webp" title="Overgrowth to usable ground" copy="Selective clearing and forestry mulching open access, improve visibility, and reveal the property underneath." />
+          <BeforeAfter before="/images/project-hero.webp" after="/images/project-20.webp" title="Rough site to ready site" copy="Grading, cleanup, and finish work turn difficult terrain into a cleaner, safer, more functional part of the property." reverse />
+        </div>
       </section>
     </>
   );

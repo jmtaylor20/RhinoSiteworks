@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ButtonLink } from '@/components/ButtonLink';
 import { EstimateForm } from '@/components/EstimateForm';
+import { MovingHero } from '@/components/MovingHero';
+import { ReviewTicker } from '@/components/ReviewTicker';
 import { SectionHeading } from '@/components/SectionHeading';
 import { services } from '@/data/services';
 import { testimonials } from '@/data/testimonials';
@@ -10,7 +12,7 @@ export default function HomePage() {
   return (
     <>
       <section className="relative isolate min-h-[720px] overflow-hidden bg-brand-forest text-white">
-        <Image src="/images/project-hero.webp" alt="Rhino Siteworks equipment improving rural property" fill priority sizes="100vw" className="object-cover" />
+        <MovingHero />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,31,23,.94)_0%,rgba(7,31,23,.76)_48%,rgba(7,31,23,.2)_100%)]" />
         <div className="container-shell relative flex min-h-[720px] items-center py-24">
           <div className="max-w-3xl">
@@ -29,11 +31,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="bg-brand-gold text-brand-ink">
-        <div className="container-shell flex flex-wrap justify-center gap-x-10 gap-y-3 py-5 text-sm font-black uppercase tracking-[0.12em]">
-          <span>Land clearing</span><span>Forestry mulching</span><span>Grading</span><span>Drainage</span><span>Gravel</span>
-        </div>
-      </div>
+      <ReviewTicker />
 
       <section id="about" className="section-space">
         <div className="container-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
@@ -49,10 +47,10 @@ export default function HomePage() {
         <div className="container-shell">
           <SectionHeading eyebrow="What we do" title="Sitework solutions for real property needs" copy="Services designed to improve access, function, safety, drainage, and the way your land looks." />
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {services.map((service, index) => (
-              <article key={service.slug} className="group flex min-h-72 flex-col border border-brand-forest/10 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lift">
-                <span className="text-sm font-black tracking-[0.18em] text-brand-green">{String(index + 1).padStart(2, '0')}</span>
-                <h3 className="mt-6 text-2xl font-black uppercase">{service.title}</h3>
+            {services.map((service) => (
+              <article key={service.slug} className="service-slat group flex min-h-72 flex-col overflow-hidden border-l-4 border-brand-gold bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lift">
+                <div className="service-mark" aria-hidden="true" />
+                <h3 className="mt-2 text-2xl font-black uppercase">{service.title}</h3>
                 <p className="mt-4 leading-7 text-slate-600">{service.shortDescription}</p>
                 <Link href={`/services/${service.slug}`} className="mt-auto pt-7 font-black text-brand-green group-hover:text-brand-forest">Explore service →</Link>
               </article>
@@ -84,8 +82,11 @@ export default function HomePage() {
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {testimonials.map((testimonial) => (
               <figure key={testimonial.name} className="border-t-4 border-brand-gold bg-brand-cream p-7">
+                <div className="text-brand-gold" aria-label="5 out of 5 stars">★★★★★</div>
                 <blockquote className="text-lg leading-8 text-slate-700">“{testimonial.quote}”</blockquote>
-                <figcaption className="mt-6 text-sm font-black uppercase tracking-wider text-brand-green">{testimonial.name}</figcaption>
+                <figcaption className="mt-6 text-sm font-black uppercase tracking-wider text-brand-green">
+                  {testimonial.name}<span className="mt-1 block text-xs tracking-normal text-slate-500">{testimonial.detail}</span>
+                </figcaption>
               </figure>
             ))}
           </div>

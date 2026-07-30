@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="bg-brand-ink text-white">
       <div className="container-shell grid gap-12 py-16 md:grid-cols-3">
         <div>
-          <Image src="/images/rhino-logo.svg" alt={`${siteConfig.name} logo`} width={150} height={100} className="h-20 w-auto" />
+          <Image src="/images/rhino-badge.png" alt={`${siteConfig.name} badge`} width={1254} height={914} className="h-auto w-60" />
           <p className="mt-5 max-w-sm text-white/65">{siteConfig.description}</p>
         </div>
         <div>
