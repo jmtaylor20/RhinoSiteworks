@@ -22,7 +22,7 @@ export default function ServicesPage() {
             <h1 className="mt-4 max-w-4xl text-5xl font-black uppercase leading-tight sm:text-7xl">Land shaped around what comes next</h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/75">Practical equipment solutions for property owners, builders, farms, and rural sites across East Alabama.</p>
           </div>
-          <Image src="/images/rhino-stacked-logo.png" alt="Rhino Siteworks" width={1080} height={1080} className="hidden w-full max-w-sm justify-self-end lg:block" />
+          <Image src="/images/rhino-badge.png" alt="Rhino Siteworks" width={1254} height={914} className="hidden w-full max-w-sm justify-self-end object-contain lg:block" />
         </div>
       </section>
       <section className="section-space bg-brand-cream">
