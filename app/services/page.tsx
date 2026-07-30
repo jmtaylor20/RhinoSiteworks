@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BeforeAfter } from '@/components/BeforeAfter';
 import { ButtonLink } from '@/components/ButtonLink';
 import { services } from '@/data/services';
 
@@ -50,9 +49,17 @@ export default function ServicesPage() {
         </div>
       </section>
       <section className="section-space">
-        <div className="container-shell grid gap-10">
-          <BeforeAfter before="/images/project-18.webp" after="/images/project-19.webp" title="Overgrowth to usable ground" copy="Selective clearing and forestry mulching open access, improve visibility, and reveal the property underneath." />
-          <BeforeAfter before="/images/project-hero.webp" after="/images/project-20.webp" title="Rough site to ready site" copy="Grading, cleanup, and finish work turn difficult terrain into a cleaner, safer, more functional part of the property." reverse />
+        <div className="container-shell">
+          <div className="max-w-3xl">
+            <p className="eyebrow text-brand-green">Work in the field</p>
+            <h2 className="mt-4 text-4xl font-black uppercase sm:text-5xl">Different sites. One practical approach.</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">These are separate Rhino Siteworks projects showing clearing, dirt work, grading, and equipment in action—not a staged before-and-after comparison.</p>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            <figure className="project-frame"><Image src="/images/project-18.webp" alt="Roadside grading project" width={1200} height={900} className="h-[430px] w-full object-cover" /><figcaption className="image-label">Roadside grading</figcaption></figure>
+            <figure className="project-frame"><Image src="/images/project-19.webp" alt="Dozer on prepared building site" width={1200} height={900} className="h-[430px] w-full object-cover" /><figcaption className="image-label bg-brand-gold text-brand-ink">Site preparation</figcaption></figure>
+            <figure className="project-frame"><Image src="/images/project-hero.webp" alt="Dozer shaping a hillside property" width={1200} height={900} className="h-[430px] w-full object-cover" /><figcaption className="image-label">Dirt work</figcaption></figure>
+          </div>
         </div>
       </section>
     </>

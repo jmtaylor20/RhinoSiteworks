@@ -3,7 +3,7 @@ import Image from 'next/image';
 const heroFrames = [
   { src: '/images/project-hero.webp', alt: 'Rhino Siteworks equipment working across an East Alabama property' },
   { src: '/images/project-19.webp', alt: 'Sitework equipment moving through a rural jobsite' },
-  { src: '/images/project-20.webp', alt: 'Completed land improvement project' },
+  { src: '/images/project-18.webp', alt: 'Cleared and graded roadside property' },
 ];
 
 export function MovingHero() {

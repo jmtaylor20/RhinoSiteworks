@@ -26,7 +26,7 @@ const trustPoints = [
 const equipment = [
   ['Forestry mulchers', '/images/project-18.webp'],
   ['Excavators', '/images/project-19.webp'],
-  ['Grading equipment', '/images/project-20.webp'],
+  ['Grading equipment', '/images/project-hero.webp'],
   ['Tracked machines', '/images/project-hero.webp'],
 ];
 
@@ -141,14 +141,18 @@ export default function HomePage() {
             <p className="eyebrow text-brand-gold">Recent work</p>
             <h2 className="mt-3 text-4xl font-black uppercase text-brand-forest sm:text-5xl">Property transformed</h2>
           </div>
-          <div className="mt-12 grid gap-3 md:grid-cols-2">
+          <div className="mt-12 grid gap-3 md:grid-cols-3">
             <figure className="project-frame">
-              <Image src="/images/project-18.webp" alt="Property before Rhino Siteworks land improvement" width={1200} height={800} className="h-[430px] w-full object-cover" />
-              <figcaption className="image-label">Before</figcaption>
+              <Image src="/images/project-18.webp" alt="Roadside clearing and grading work by Rhino Siteworks" width={1200} height={800} className="h-[430px] w-full object-cover" />
+              <figcaption className="image-label">Clearing & grading</figcaption>
             </figure>
             <figure className="project-frame">
-              <Image src="/images/project-20.webp" alt="Property after Rhino Siteworks land improvement" width={1200} height={800} className="h-[430px] w-full object-cover" />
-              <figcaption className="image-label bg-brand-gold text-brand-ink">After</figcaption>
+              <Image src="/images/project-19.webp" alt="Dozer working on a prepared site" width={1200} height={800} className="h-[430px] w-full object-cover" />
+              <figcaption className="image-label bg-brand-gold text-brand-ink">Site preparation</figcaption>
+            </figure>
+            <figure className="project-frame">
+              <Image src="/images/project-hero.webp" alt="Rhino Siteworks dozer shaping an East Alabama property" width={1200} height={800} className="h-[430px] w-full object-cover" />
+              <figcaption className="image-label">Dirt work</figcaption>
             </figure>
           </div>
           <div className="mt-9 text-center"><ButtonLink href="/gallery">View more projects</ButtonLink></div>
