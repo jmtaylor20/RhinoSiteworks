@@ -3,13 +3,19 @@ import { siteConfig } from '@/config/site';
 export function LocalBusinessJsonLd() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
+    '@id': `${siteConfig.url}/#business`,
     name: siteConfig.name,
     description: siteConfig.description,
     url: siteConfig.url,
     telephone: siteConfig.phoneHref,
     email: siteConfig.email,
-    image: `${siteConfig.url}/images/project-hero.webp`,
+    logo: `${siteConfig.url}/brand/rhino-primary.png`,
+    image: [
+      `${siteConfig.url}/media/hero-land-clearing-poster.webp`,
+      `${siteConfig.url}/media/gravel-driveway-installation.webp`,
+      `${siteConfig.url}/media/excavator-land-clearing.webp`,
+    ],
     address: {
       '@type': 'PostalAddress',
       streetAddress: siteConfig.address.street,
@@ -18,7 +24,22 @@ export function LocalBusinessJsonLd() {
       postalCode: siteConfig.address.postalCode,
       addressCountry: siteConfig.address.country,
     },
-    areaServed: siteConfig.serviceArea.map((name) => ({ '@type': 'City', name })),
+    areaServed: siteConfig.serviceArea.map((name) => ({ '@type': name.includes('County') ? 'AdministrativeArea' : 'City', name })),
+    sameAs: [siteConfig.googleBusinessUrl],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '31',
+      bestRating: '5',
+    },
+    knowsAbout: [
+      'Land clearing',
+      'Forestry mulching',
+      'Grading and dirt work',
+      'Drainage solutions',
+      'Gravel driveways',
+      'Property reclamation',
+    ],
     priceRange: '$$',
   };
 

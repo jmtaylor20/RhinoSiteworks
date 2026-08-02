@@ -24,17 +24,15 @@ const trustPoints = [
 ];
 
 const equipment = [
-  ['Forestry mulchers', '/images/project-18.webp'],
-  ['Excavators', '/images/project-19.webp'],
-  ['Grading equipment', '/images/project-hero.webp'],
-  ['Tracked machines', '/images/project-hero.webp'],
+  ['Forestry mulchers', '/media/forestry-mulching-jobsite.webp'],
+  ['Excavators', '/media/excavator-and-dozer-jobsite.webp'],
+  ['Grading equipment', '/media/dozer-site-grading.webp'],
+  ['Tracked machines', '/media/dozer-land-clearing.webp'],
 ];
 
 export default function HomePage() {
   return (
     <>
-      <ReviewTicker />
-
       <section className="industrial-hero relative isolate min-h-[690px] overflow-hidden bg-brand-forest text-white">
         <MovingHero />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,16,11,.98)_0%,rgba(7,31,23,.86)_46%,rgba(7,31,23,.18)_100%)]" />
@@ -54,6 +52,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <ReviewTicker />
 
       <section className="bg-brand-forest text-white">
         <div className="container-shell grid divide-y divide-white/15 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
@@ -87,17 +87,17 @@ export default function HomePage() {
       <section id="about" className="grid bg-brand-forest text-white lg:grid-cols-2">
         <div className="flex items-center px-5 py-20 sm:px-10 lg:px-[max(2.5rem,calc((100vw-80rem)/2))]">
           <div className="max-w-2xl">
-            <p className="eyebrow text-brand-gold">About Rhino</p>
+            <p className="eyebrow text-brand-gold">About Rhino Landworks</p>
             <h2 className="mt-4 text-4xl font-black uppercase sm:text-5xl">Built on hard work.<br />Trusted across Alabama.</h2>
             <div className="mt-6 grid gap-5 text-lg leading-8 text-white/72">
-              <p>Rhino Siteworks is a local land-service company specializing in clearing, forestry mulching, dirt work, drainage, access, and site preparation.</p>
+              <p>Rhino Landworks is a local land-service company specializing in clearing, forestry mulching, dirt work, drainage, access, and site preparation.</p>
               <p>Every project starts with the property itself: its terrain, access, water flow, and what you need the land to become.</p>
             </div>
             <ButtonLink href="/contact" className="mt-8">Talk about your property</ButtonLink>
           </div>
         </div>
         <div className="relative min-h-[520px]">
-          <Image src="/images/project-19.webp" alt="Rhino Siteworks equipment on an East Alabama project" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+          <Image src="/media/excavator-land-clearing.webp" alt="Excavator clearing an East Alabama property for Rhino Landworks" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
         </div>
       </section>
 
@@ -143,16 +143,16 @@ export default function HomePage() {
           </div>
           <div className="mt-12 grid gap-3 md:grid-cols-3">
             <figure className="project-frame">
-              <Image src="/images/project-18.webp" alt="Roadside clearing and grading work by Rhino Siteworks" width={1200} height={800} className="h-[430px] w-full object-cover" />
-              <figcaption className="image-label">Clearing & grading</figcaption>
+              <Image src="/media/gravel-driveway-installation.webp" alt="New gravel driveway installed on a rural East Alabama property" width={1920} height={1440} className="h-[430px] w-full object-cover" />
+              <figcaption className="image-label">Gravel driveway</figcaption>
             </figure>
             <figure className="project-frame">
-              <Image src="/images/project-19.webp" alt="Dozer working on a prepared site" width={1200} height={800} className="h-[430px] w-full object-cover" />
-              <figcaption className="image-label bg-brand-gold text-brand-ink">Site preparation</figcaption>
+              <Image src="/media/culvert-drainage-installation.webp" alt="Culvert pipe installation for improved property drainage" width={1920} height={1440} className="h-[430px] w-full object-cover" />
+              <figcaption className="image-label bg-brand-gold text-brand-ink">Culvert drainage</figcaption>
             </figure>
             <figure className="project-frame">
-              <Image src="/images/project-hero.webp" alt="Rhino Siteworks dozer shaping an East Alabama property" width={1200} height={800} className="h-[430px] w-full object-cover" />
-              <figcaption className="image-label">Dirt work</figcaption>
+              <Image src="/media/brush-clearing-excavator.webp" alt="Excavator removing brush and reclaiming overgrown land" width={1920} height={1440} className="h-[430px] w-full object-cover" />
+              <figcaption className="image-label">Brush clearing</figcaption>
             </figure>
           </div>
           <div className="mt-9 text-center"><ButtonLink href="/gallery">View more projects</ButtonLink></div>
@@ -182,7 +182,7 @@ export default function HomePage() {
 
       <section className="bg-brand-gold py-12 text-brand-ink">
         <div className="container-shell grid items-center gap-8 lg:grid-cols-[auto_1fr_auto]">
-          <Image src="/images/rhino-badge.png" alt="" width={1254} height={914} className="hidden h-24 w-36 object-contain lg:block" />
+          <Image src="/brand/rhino-badge.png" alt="" width={1470} height={1070} className="hidden h-28 w-40 bg-white object-contain lg:block" />
           <div>
             <h2 className="text-4xl font-black uppercase">Ready to improve your land?</h2>
             <p className="mt-2 font-semibold">Tell us what the property needs and get a clear next step.</p>
@@ -196,7 +196,7 @@ export default function HomePage() {
           <div>
             <p className="eyebrow text-brand-gold">Start your project</p>
             <h2 className="mt-4 text-4xl font-black uppercase sm:text-5xl">Tell us about the property.</h2>
-            <p className="mt-5 text-lg leading-8 text-white/70">Share the location, the problem, and the result you want. Rhino Siteworks will follow up about access, scope, and timing.</p>
+            <p className="mt-5 text-lg leading-8 text-white/70">Share the location, the problem, and the result you want. Rhino Landworks will follow up about access, scope, and timing.</p>
           </div>
           <EstimateForm />
         </div>

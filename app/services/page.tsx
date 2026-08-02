@@ -5,8 +5,8 @@ import { ButtonLink } from '@/components/ButtonLink';
 import { services } from '@/data/services';
 
 export const metadata: Metadata = {
-  title: 'Land & Sitework Services',
-  description: 'Explore Rhino Siteworks land clearing, forestry mulching, grading, drainage, driveway, and property reclamation services.',
+  title: 'Land Clearing, Grading & Forestry Mulching Services',
+  description: 'Explore Rhino Landworks land clearing, forestry mulching, grading, drainage, gravel driveway, and property reclamation services in East Alabama.',
   alternates: { canonical: '/services' },
 };
 
@@ -14,7 +14,7 @@ export default function ServicesPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-brand-forest py-20 text-white sm:py-28">
-        <Image src="/images/project-hero.webp" alt="" fill priority sizes="100vw" className="object-cover opacity-30" />
+        <Image src="/media/dozer-land-clearing.webp" alt="Dozer clearing and preparing land in East Alabama" fill priority sizes="100vw" className="object-cover opacity-35" />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-forest via-brand-forest/90 to-brand-forest/50" />
         <div className="container-shell relative grid items-center gap-10 lg:grid-cols-[1fr_360px]">
           <div>
@@ -22,7 +22,7 @@ export default function ServicesPage() {
             <h1 className="mt-4 max-w-4xl text-5xl font-black uppercase leading-tight sm:text-7xl">Land shaped around what comes next</h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/75">Practical equipment solutions for property owners, builders, farms, and rural sites across East Alabama.</p>
           </div>
-          <Image src="/images/rhino-badge.png" alt="Rhino Siteworks" width={1254} height={914} className="hidden w-full max-w-sm justify-self-end object-contain lg:block" />
+          <Image src="/brand/rhino-stacked.png" alt="Rhino Landworks" width={1254} height={1254} className="hidden w-full max-w-xs justify-self-end bg-white/95 p-4 shadow-2xl lg:block" />
         </div>
       </section>
       <section className="section-space bg-brand-cream">
@@ -53,12 +53,12 @@ export default function ServicesPage() {
           <div className="max-w-3xl">
             <p className="eyebrow text-brand-green">Work in the field</p>
             <h2 className="mt-4 text-4xl font-black uppercase sm:text-5xl">Different sites. One practical approach.</h2>
-            <p className="mt-5 text-lg leading-8 text-slate-600">These are separate Rhino Siteworks projects showing clearing, dirt work, grading, and equipment in action—not a staged before-and-after comparison.</p>
+            <p className="mt-5 text-lg leading-8 text-slate-600">These are separate Rhino Landworks projects showing forestry mulching, drainage installation, and gravel driveway work in the field.</p>
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
-            <figure className="project-frame"><Image src="/images/project-18.webp" alt="Roadside grading project" width={1200} height={900} className="h-[430px] w-full object-cover" /><figcaption className="image-label">Roadside grading</figcaption></figure>
-            <figure className="project-frame"><Image src="/images/project-19.webp" alt="Dozer on prepared building site" width={1200} height={900} className="h-[430px] w-full object-cover" /><figcaption className="image-label bg-brand-gold text-brand-ink">Site preparation</figcaption></figure>
-            <figure className="project-frame"><Image src="/images/project-hero.webp" alt="Dozer shaping a hillside property" width={1200} height={900} className="h-[430px] w-full object-cover" /><figcaption className="image-label">Dirt work</figcaption></figure>
+            <figure className="project-frame"><Image src="/media/forestry-mulching-jobsite.webp" alt="Tracked forestry mulcher clearing vegetation from a wooded property" width={1920} height={1440} className="h-[430px] w-full object-cover" /><figcaption className="image-label">Forestry mulching</figcaption></figure>
+            <figure className="project-frame"><Image src="/media/culvert-drainage-installation.webp" alt="Culvert pipe installation for property drainage" width={1920} height={1440} className="h-[430px] w-full object-cover" /><figcaption className="image-label bg-brand-gold text-brand-ink">Drainage installation</figcaption></figure>
+            <figure className="project-frame"><Image src="/media/gravel-driveway-installation.webp" alt="Completed gravel driveway installation on a rural property" width={1920} height={1440} className="h-[430px] w-full object-cover" /><figcaption className="image-label">Gravel driveway</figcaption></figure>
           </div>
         </div>
       </section>

@@ -5,7 +5,7 @@ import { googleReviewProfile, testimonials } from '@/data/testimonials';
 
 export const metadata: Metadata = {
   title: 'Customer Reviews',
-  description: 'Read verified Google reviews from Rhino Outdoor Services customers across East Alabama.',
+  description: 'Read verified Google reviews from Rhino Landworks customers who hired the team for clearing, grading, property improvement, and site preparation in East Alabama.',
   alternates: { canonical: '/reviews' },
 };
 
@@ -13,13 +13,13 @@ export default function ReviewsPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-brand-ink py-20 text-white sm:py-28">
-        <Image src="/images/project-hero.webp" alt="" fill priority sizes="100vw" className="object-cover opacity-20" />
+        <Image src="/media/finished-site-grading.webp" alt="Finished grading work on an East Alabama property" fill priority sizes="100vw" className="object-cover opacity-25" />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-ink via-brand-ink/95 to-brand-forest/70" />
         <div className="container-shell relative grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
             <p className="eyebrow text-brand-gold">Customer experience</p>
             <h1 className="mt-4 max-w-4xl text-5xl font-black uppercase leading-[0.96] sm:text-7xl">The work matters.<br /><span className="text-brand-gold">So does the experience.</span></h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/72">Verified feedback from property owners who trusted Rhino Outdoor Services with their land.</p>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/72">Verified feedback from property owners who trusted Rhino Landworks with their land.</p>
           </div>
           <a href={googleReviewProfile} target="_blank" rel="noreferrer" className="review-score-card">
             <span className="text-brand-gold">★★★★★</span>

@@ -9,20 +9,20 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-brand-gold/20 bg-brand-forest text-white shadow-lg">
-      <div className="container-shell flex h-[76px] items-center justify-between gap-4 sm:h-[88px]">
-        <Link href="/" className="flex items-center gap-3" aria-label={`${siteConfig.name} home`}>
+    <header className="sticky top-0 z-50 w-full border-b-2 border-brand-gold bg-brand-forest text-white shadow-lg">
+      <div className="container-shell flex h-[88px] items-center justify-between gap-4 sm:h-[112px]">
+        <Link href="/" className="flex shrink-0 items-center" aria-label={`${siteConfig.name} home`}>
           <Image
-            src="/images/rhino-primary-logo.png"
-            alt="Rhino Siteworks"
-            width={1922}
-            height={555}
+            src="/brand/rhino-primary.png"
+            alt="Rhino Landworks"
+            width={1778}
+            height={583}
             priority
-            className="h-auto w-[178px] object-contain sm:w-[235px]"
+            className="h-auto w-[218px] object-contain sm:w-[280px] xl:w-[305px]"
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-5 xl:gap-7 lg:flex" aria-label="Primary navigation">
           {siteConfig.nav.map((item) => (
             <Link key={item.href} href={item.href} className="text-sm font-bold hover:text-brand-gold">
               {item.label}

@@ -8,8 +8,8 @@ export const contentType = 'image/png';
 export default function OpenGraphImage() {
   return new ImageResponse(
     (
-      <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: '#092d22', color: 'white', padding: 80 }}>
-        <div style={{ color: '#d9a62e', fontSize: 28, letterSpacing: 7, textTransform: 'uppercase' }}>East Alabama land services</div>
+      <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: '#304830', color: 'white', padding: 80, borderBottom: '22px solid #efbd1f' }}>
+        <div style={{ color: '#efbd1f', fontSize: 28, letterSpacing: 7, textTransform: 'uppercase' }}>East Alabama land services</div>
         <div style={{ fontSize: 92, fontWeight: 900, lineHeight: 1, marginTop: 30, textTransform: 'uppercase' }}>{siteConfig.name}</div>
         <div style={{ fontSize: 34, color: '#d7e3dd', marginTop: 35 }}>Clearing • Mulching • Grading • Drainage • Gravel</div>
       </div>

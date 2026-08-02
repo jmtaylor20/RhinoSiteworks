@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --brand-forest: #092d22;
-  --brand-green: #174f3a;
-  --brand-gold: #d9a62e;
-  --brand-cream: #f4f0e6;
-  --brand-ink: #101814;
+  --brand-forest: #304830;
+  --brand-green: #405b39;
+  --brand-gold: #efbd1f;
+  --brand-cream: #f6f3e9;
+  --brand-ink: #142018;
 }
 
 html { scroll-behavior: smooth; }
@@ -27,26 +27,6 @@ h1, h2, h3 { font-family: "Arial Black", Impact, Haettenschweiler, "Arial Narrow
   }
 }
 
-.hero-motion-frame {
-  position: absolute;
-  inset: -5%;
-  opacity: 0;
-  animation: hero-flyover 24s infinite;
-  will-change: transform, opacity;
-}
-
-.hero-motion-frame-1 { animation-delay: 0s; }
-.hero-motion-frame-2 { animation-delay: 8s; }
-.hero-motion-frame-3 { animation-delay: 16s; }
-
-@keyframes hero-flyover {
-  0% { opacity: 0; transform: scale(1.08) translate3d(-2%, 1%, 0); }
-  7% { opacity: 1; }
-  31% { opacity: 1; }
-  40% { opacity: 0; transform: scale(1.22) translate3d(3%, -2%, 0); }
-  100% { opacity: 0; transform: scale(1.22) translate3d(3%, -2%, 0); }
-}
-
 .review-ticker {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
@@ -60,7 +40,7 @@ h1, h2, h3 { font-family: "Arial Black", Impact, Haettenschweiler, "Arial Narrow
   min-height: 78px;
   flex-direction: column;
   justify-content: center;
-  border-right: 1px solid rgb(217 166 46 / 0.3);
+  border-right: 1px solid rgb(239 189 31 / 0.35);
   background: var(--brand-forest);
   padding: 0.8rem clamp(1rem, 3vw, 2.5rem);
   font-size: 0.78rem;
@@ -131,8 +111,8 @@ h1, h2, h3 { font-family: "Arial Black", Impact, Haettenschweiler, "Arial Narrow
 .paper-texture {
   background-color: #f7f5ef;
   background-image:
-    radial-gradient(circle at 15% 20%, rgb(9 45 34 / 0.035) 0 1px, transparent 1px),
-    radial-gradient(circle at 75% 60%, rgb(9 45 34 / 0.03) 0 1px, transparent 1px);
+    radial-gradient(circle at 15% 20%, rgb(48 72 48 / 0.035) 0 1px, transparent 1px),
+    radial-gradient(circle at 75% 60%, rgb(48 72 48 / 0.03) 0 1px, transparent 1px);
   background-size: 22px 22px, 31px 31px;
 }
 
@@ -155,7 +135,7 @@ h1, h2, h3 { font-family: "Arial Black", Impact, Haettenschweiler, "Arial Narrow
 .service-tile:hover {
   z-index: 1;
   transform: translateY(-5px);
-  box-shadow: 0 22px 50px rgb(9 45 34 / 0.14);
+  box-shadow: 0 22px 50px rgb(48 72 48 / 0.16);
 }
 
 .service-tile:hover::after { transform: scaleX(1); }
@@ -186,7 +166,7 @@ h1, h2, h3 { font-family: "Arial Black", Impact, Haettenschweiler, "Arial Narrow
   position: relative;
   overflow: hidden;
   border: 6px solid white;
-  box-shadow: 0 16px 35px rgb(9 45 34 / 0.18);
+  box-shadow: 0 16px 35px rgb(48 72 48 / 0.2);
 }
 
 .project-frame img {
@@ -240,7 +220,7 @@ h1, h2, h3 { font-family: "Arial Black", Impact, Haettenschweiler, "Arial Narrow
     flex-direction: row;
     align-items: center;
     gap: 0.7rem;
-    border-bottom: 1px solid rgb(217 166 46 / 0.3);
+    border-bottom: 1px solid rgb(239 189 31 / 0.35);
     border-right: 0;
   }
   .review-ticker-item {
@@ -252,8 +232,6 @@ h1, h2, h3 { font-family: "Arial Black", Impact, Haettenschweiler, "Arial Narrow
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-motion-frame { animation: none; opacity: 0; transform: none; }
-  .hero-motion-frame-1 { opacity: 1; }
   .review-ticker-track { animation: none; }
   .review-ticker-window { overflow-x: auto; }
 }

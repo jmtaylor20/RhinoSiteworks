@@ -1,6 +1,6 @@
 # Local Service Business Starter
 
-A production-ready Next.js 15 starter configured for Rhino Siteworks and designed to be reused for contractors and local service businesses.
+A production-ready Next.js 15 starter configured for Rhino Landworks and designed to be reused for contractors and local service businesses.
 
 ## Included
 
@@ -26,7 +26,7 @@ Visit `http://localhost:3000`.
 
 1. Edit `config/site.ts` for the name, URL, description, contact details, service area, and navigation.
 2. Edit `data/services.ts` and `data/testimonials.ts`.
-3. Replace files in `public/images` while keeping the current filenames, or update their paths in the pages.
+3. Replace logo files in `public/brand` and project media in `public/media`, then update their paths and accurate alternative text in the page data.
 4. Change the five CSS brand variables at the top of `app/globals.css`.
 5. Set `NEXT_PUBLIC_SITE_URL` to the production URL in Netlify.
 6. Update the static form fields in `public/__forms.html` whenever fields in `components/EstimateForm.tsx` change.
@@ -63,4 +63,4 @@ Future projects can then use **Use this template** to create a clean repository 
 
 ## Content note
 
-The included testimonials are starter copy. Replace them with verified customer reviews before launch.
+The Rhino build uses verified Google review excerpts. When reusing the template, replace the testimonials, review count, rating schema, and Google Business Profile link with verified details for the new business.

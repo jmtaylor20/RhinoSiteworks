@@ -7,7 +7,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: { default: `${siteConfig.name} | East Alabama Land Services`, template: `%s | ${siteConfig.name}` },
+  title: { default: `${siteConfig.name} | Land Clearing & Dirt Work in East Alabama`, template: `%s | ${siteConfig.name}` },
   description: siteConfig.description,
   applicationName: siteConfig.name,
   alternates: { canonical: '/' },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | East Alabama Land Services`,
+    title: `${siteConfig.name} | Land Clearing & Dirt Work in East Alabama`,
     description: siteConfig.description,
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: siteConfig.name }],
   },
@@ -26,8 +26,18 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: ['/opengraph-image'],
   },
+  keywords: [
+    'land clearing East Alabama',
+    'forestry mulching Auburn AL',
+    'grading contractor Opelika AL',
+    'dirt work Tuskegee AL',
+    'gravel driveway installation East Alabama',
+    'property drainage contractor',
+    'brush clearing Macon County',
+  ],
+  category: 'Land clearing and site preparation contractor',
   other: {
-    'theme-color': '#092d22',
+    'theme-color': '#304830',
   },
 };
 

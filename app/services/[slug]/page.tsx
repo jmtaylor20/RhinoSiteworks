@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ButtonLink } from '@/components/ButtonLink';
 import { PageHero } from '@/components/PageHero';
+import { ServiceJsonLd } from '@/components/ServiceJsonLd';
 import { getService, services } from '@/data/services';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -17,7 +18,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: service.title,
     description: service.shortDescription,
     alternates: { canonical: `/services/${service.slug}` },
-    openGraph: { title: service.title, description: service.shortDescription, url: `/services/${service.slug}` },
+    openGraph: {
+      title: `${service.title} in East Alabama`,
+      description: service.shortDescription,
+      url: `/services/${service.slug}`,
+      images: [{ url: service.image, alt: service.imageAlt }],
+    },
   };
 }
 
@@ -27,7 +33,8 @@ export default async function ServicePage({ params }: Props) {
 
   return (
     <>
-      <PageHero eyebrow="Rhino Siteworks service" title={service.title} copy={service.shortDescription} />
+      <ServiceJsonLd service={service} />
+      <PageHero eyebrow="Rhino Landworks service" title={service.title} copy={service.shortDescription} image={service.image} imageAlt={service.imageAlt} />
       <section className="section-space">
         <div className="container-shell grid gap-12 lg:grid-cols-[1.2fr_.8fr]">
           <article>
