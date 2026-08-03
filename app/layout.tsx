@@ -5,10 +5,13 @@ import { LocalBusinessJsonLd } from '@/components/LocalBusinessJsonLd';
 import { siteConfig } from '@/config/site';
 import './globals.css';
 
+const previewTitle = `${siteConfig.name} | Land Clearing & Dirt Work in East Alabama`;
+const previewDescription = 'Clearing, mulching, grading, drainage, and gravel services for East Alabama properties.';
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: { default: `${siteConfig.name} | Land Clearing & Dirt Work in East Alabama`, template: `%s | ${siteConfig.name}` },
-  description: siteConfig.description,
+  title: { default: previewTitle, template: `%s | ${siteConfig.name}` },
+  description: previewDescription,
   applicationName: siteConfig.name,
   alternates: { canonical: '/' },
   openGraph: {
@@ -16,14 +19,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | Land Clearing & Dirt Work in East Alabama`,
-    description: siteConfig.description,
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: siteConfig.name }],
+    title: previewTitle,
+    description: previewDescription,
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: `${siteConfig.name} social preview` }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.name,
-    description: siteConfig.description,
+    title: previewTitle,
+    description: previewDescription,
     images: ['/opengraph-image'],
   },
   keywords: [
@@ -41,7 +44,7 @@ export const metadata: Metadata = {
   ],
   category: 'Land clearing and site preparation contractor',
   other: {
-    'theme-color': '#304830',
+    'theme-color': '#243f27',
   },
 };
 
