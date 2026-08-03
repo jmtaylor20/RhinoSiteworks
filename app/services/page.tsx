@@ -5,8 +5,8 @@ import { ButtonLink } from '@/components/ButtonLink';
 import { services } from '@/data/services';
 
 export const metadata: Metadata = {
-  title: 'Land Clearing, Grading & Forestry Mulching Services',
-  description: 'Explore Rhino Landworks land clearing, forestry mulching, grading, drainage, gravel driveway, and property reclamation services in East Alabama.',
+  title: 'Land Clearing, Bush Hogging & Hunting Land Services',
+  description: 'Explore Rhino Landworks land clearing, forestry mulching, bush hogging, hunting land maintenance, grading, drainage, gravel driveway, firebreak, and firelane services in East Alabama.',
   alternates: { canonical: '/services' },
 };
 
@@ -29,7 +29,7 @@ export default function ServicesPage() {
         <div className="container-shell">
           <div className="mb-12 grid gap-6 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
             <p className="eyebrow text-brand-green">Choose the outcome—not a box</p>
-            <p className="text-lg leading-8 text-slate-600">Most projects use more than one capability. We start with the property problem, then combine the right clearing, grading, drainage, and access work into one sensible plan.</p>
+            <p className="text-lg leading-8 text-slate-600">Most projects use more than one capability. We start with the property problem, then combine the right clearing, bush hogging, grading, drainage, and access work into one sensible plan.</p>
           </div>
           <div className="divide-y divide-brand-forest/15 border-y border-brand-forest/15">
           {services.map((service) => (
@@ -45,6 +45,14 @@ export default function ServicesPage() {
             </article>
           ))}
           </div>
+          <aside className="mt-12 grid gap-6 bg-brand-forest p-8 text-white md:grid-cols-[1fr_auto] md:items-center sm:p-10">
+            <div>
+              <p className="eyebrow text-brand-gold">Fire management access</p>
+              <h2 className="mt-3 text-3xl font-black uppercase">Firebreaks &amp; firelanes</h2>
+              <p className="mt-4 max-w-3xl leading-7 text-white/75">Rhino can establish or maintain cleared lanes that improve property access and help separate fuels around wooded acreage. Firebreak and firelane work can be coordinated with land clearing, hunting-property maintenance, grading, and brush control.</p>
+            </div>
+            <ButtonLink href="/contact">Discuss your property</ButtonLink>
+          </aside>
           <ButtonLink href="/contact" className="mt-10">Request an estimate</ButtonLink>
         </div>
       </section>

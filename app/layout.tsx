@@ -34,6 +34,10 @@ export const metadata: Metadata = {
     'gravel driveway installation East Alabama',
     'property drainage contractor',
     'brush clearing Macon County',
+    'bush hogging East Alabama',
+    'hunting land maintenance Alabama',
+    'firebreak construction Alabama',
+    'firelane maintenance East Alabama',
   ],
   category: 'Land clearing and site preparation contractor',
   other: {

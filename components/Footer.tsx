@@ -14,7 +14,7 @@ export function Footer() {
         <div>
           <h2 className="text-sm font-black uppercase tracking-[0.2em] text-brand-gold">Services</h2>
           <div className="mt-5 grid gap-3">
-            {services.slice(0, 5).map((service) => (
+            {services.map((service) => (
               <Link key={service.slug} href={`/services/${service.slug}`} className="text-white/70 hover:text-white">{service.title}</Link>
             ))}
           </div>

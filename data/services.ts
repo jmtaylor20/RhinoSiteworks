@@ -4,8 +4,8 @@ export type Service = {
   shortDescription: string;
   description: string;
   benefits: string[];
-  image: string;
-  imageAlt: string;
+  image?: string;
+  imageAlt?: string;
 };
 
 export const services: Service[] = [
@@ -13,8 +13,8 @@ export const services: Service[] = [
     slug: 'land-clearing',
     title: 'Land Clearing',
     shortDescription: 'Prepare wooded or overgrown property for access, construction, pasture, or a fresh start.',
-    description: 'Rhino Landworks clears unwanted trees, brush, and debris while planning around access, drainage, and your end goal.',
-    benefits: ['Construction and pasture preparation', 'Access and sightline improvement', 'A cleaner, more usable property'],
+    description: 'Rhino Landworks clears unwanted trees, brush, and debris while planning around access, drainage, firebreaks, firelanes, and your end goal.',
+    benefits: ['Construction and pasture preparation', 'Access and sightline improvement', 'Firebreak and firelane construction', 'A cleaner, more usable property'],
     image: '/media/excavator-land-clearing.webp',
     imageAlt: 'Excavator clearing trees and brush from an East Alabama property',
   },
@@ -53,6 +53,22 @@ export const services: Service[] = [
     benefits: ['New driveway construction', 'Regrading and pothole repair', 'Access-road improvement'],
     image: '/media/gravel-driveway-installation.webp',
     imageAlt: 'Freshly installed gravel driveway on a rural property',
+  },
+  {
+    slug: 'bush-hogging',
+    title: 'Bush Hogging',
+    shortDescription: 'Control tall grass, weeds, saplings, and light brush across fields, pastures, trails, and vacant land.',
+    description: 'Rhino Landworks provides bush hogging for rural properties that need dependable vegetation control without full clearing. We help restore access, improve sightlines, and keep open ground manageable through seasonal or one-time cutting.',
+    benefits: ['Fields, pastures, trails, and vacant lots', 'Seasonal property maintenance', 'Tall grass, weeds, and light-brush control', 'Improved access and visibility'],
+  },
+  {
+    slug: 'hunting-land-maintenance',
+    title: 'Hunting Land Maintenance',
+    shortDescription: 'Maintain hunting property access, trails, lanes, food-plot areas, drainage, and overgrowth throughout the year.',
+    description: 'Good hunting land needs practical access and consistent upkeep. Rhino Landworks combines clearing, grading, bush hogging, and drainage work to maintain trails, shooting lanes, food-plot areas, firebreaks, and firelanes around the way you use the property.',
+    benefits: ['Trail and access-road maintenance', 'Shooting-lane and food-plot area preparation', 'Firebreak and firelane maintenance', 'Brush control and drainage improvement'],
+    image: '/media/dozer-road-grading.webp',
+    imageAlt: 'Dozer maintaining an access road through wooded hunting land',
   },
   {
     slug: 'property-reclamation',

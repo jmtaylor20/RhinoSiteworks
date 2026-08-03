@@ -11,7 +11,7 @@ export function ServiceJsonLd({ service }: { service: Service }) {
         name: service.title,
         description: service.description,
         url: `${siteConfig.url}/services/${service.slug}`,
-        image: `${siteConfig.url}${service.image}`,
+        ...(service.image ? { image: `${siteConfig.url}${service.image}` } : {}),
         provider: { '@id': `${siteConfig.url}/#business` },
         areaServed: siteConfig.serviceArea.map((name) => ({
           '@type': name.includes('County') ? 'AdministrativeArea' : 'City',

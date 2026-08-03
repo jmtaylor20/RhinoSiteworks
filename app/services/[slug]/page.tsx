@@ -15,14 +15,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getService((await params).slug);
   if (!service) return {};
   return {
-    title: service.title,
+    title: `${service.title} in East Alabama`,
     description: service.shortDescription,
     alternates: { canonical: `/services/${service.slug}` },
     openGraph: {
       title: `${service.title} in East Alabama`,
       description: service.shortDescription,
       url: `/services/${service.slug}`,
-      images: [{ url: service.image, alt: service.imageAlt }],
+      ...(service.image ? { images: [{ url: service.image, alt: service.imageAlt || service.title }] } : {}),
     },
   };
 }

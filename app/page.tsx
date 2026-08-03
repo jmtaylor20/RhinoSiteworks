@@ -13,6 +13,8 @@ const serviceCodes: Record<string, string> = {
   'grading-dirt-work': 'DG',
   drainage: 'DR',
   'gravel-driveways': 'GD',
+  'bush-hogging': 'BH',
+  'hunting-land-maintenance': 'HL',
   'property-reclamation': 'PR',
 };
 
@@ -43,7 +45,7 @@ export default function HomePage() {
               Land work<br /><span className="text-brand-gold">done right.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-base font-black uppercase leading-8 tracking-[0.08em] text-white/85 sm:text-lg">
-              Forestry mulching <span className="text-brand-gold">•</span> grading <span className="text-brand-gold">•</span> site preparation <span className="text-brand-gold">•</span> property improvement
+              Land clearing <span className="text-brand-gold">•</span> forestry mulching <span className="text-brand-gold">•</span> bush hogging <span className="text-brand-gold">•</span> grading
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/contact">Get a free estimate</ButtonLink>
@@ -70,7 +72,7 @@ export default function HomePage() {
         <div className="container-shell text-center">
           <p className="eyebrow text-brand-gold">What we do</p>
           <h2 className="mt-3 text-4xl font-black uppercase text-brand-forest sm:text-5xl">Complete land solutions</h2>
-          <div className="mt-12 grid gap-px overflow-hidden border border-brand-forest/15 bg-brand-forest/15 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+          <div className="mt-12 grid gap-px overflow-hidden border border-brand-forest/15 bg-brand-forest/15 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => (
               <article key={service.slug} className="service-tile group flex min-h-80 flex-col bg-white p-6 text-left">
                 <span className="service-glyph" aria-hidden="true">{serviceCodes[service.slug]}</span>
