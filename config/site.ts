@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: 'Rhino Landworks',
+  name: 'Rhino Landwork',
   shortName: 'Rhino',
   description:
     'East Alabama land clearing, forestry mulching, bush hogging, hunting land maintenance, grading, drainage, firebreak, firelane, gravel driveway, and property reclamation services.',
