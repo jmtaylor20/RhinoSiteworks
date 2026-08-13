@@ -7,10 +7,11 @@ import { services } from '@/data/services';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
-// Google Ads "Form submit" conversion.
-// TODO: replace FORM_CONVERSION_LABEL with the label from the form action's
-// event snippet once it's created in Google Ads (Goals > Conversions > + New).
-// Until then this fires nothing and the form stays untracked.
+// Optional Google-Ads-native form conversion snippet. Lead tracking works
+// without this — the GA4 `request_quote` key event below is the source of
+// truth, and importing that key event into Google Ads is the recommended way
+// to count form conversions. Only paste a real send-to label here if you also
+// want a Google-Ads-native snippet to fire (Goals > Conversions > + New).
 const FORM_CONVERSION_SEND_TO = 'AW-16472265989/FORM_CONVERSION_LABEL';
 
 export function EstimateForm() {
@@ -21,8 +22,10 @@ export function EstimateForm() {
     setStatus('submitting');
 
     const form = event.currentTarget;
+    const data = new FormData(form);
+    const service = (data.get('service') as string) || '';
     const body = new URLSearchParams();
-    new FormData(form).forEach((value, key) => {
+    data.forEach((value, key) => {
       if (typeof value === 'string') body.append(key, value);
     });
 
@@ -35,7 +38,7 @@ export function EstimateForm() {
       if (!response.ok) throw new Error('Submission failed');
       form.reset();
       setStatus('success');
-      reportFormConversion();
+      reportLeadConversion(service);
     } catch {
       setStatus('error');
     }
@@ -83,11 +86,23 @@ export function EstimateForm() {
   );
 }
 
-function reportFormConversion() {
-  if (FORM_CONVERSION_SEND_TO.includes('FORM_CONVERSION_LABEL')) return;
+function reportLeadConversion(service: string) {
   const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
   if (typeof gtag !== 'function') return;
-  gtag('event', 'conversion', { send_to: FORM_CONVERSION_SEND_TO });
+
+  // GA4 key event — the source of truth for lead tracking. Mark `request_quote`
+  // as a key event in GA4 and import it into Google Ads to count conversions.
+  gtag('event', 'request_quote', {
+    form_id: 'estimate-request',
+    service: service || 'unspecified',
+    value: 0,
+  });
+
+  // Optional Google-Ads-native conversion snippet (only fires once a real
+  // send-to label is set above).
+  if (!FORM_CONVERSION_SEND_TO.includes('FORM_CONVERSION_LABEL')) {
+    gtag('event', 'conversion', { send_to: FORM_CONVERSION_SEND_TO });
+  }
 }
 
 function FormField({ label, children }: { label: string; children: React.ReactNode }) {
