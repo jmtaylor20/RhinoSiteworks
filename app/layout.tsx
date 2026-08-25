@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { LocalBusinessJsonLd } from '@/components/LocalBusinessJsonLd';
+import { StickyCallBar } from '@/components/StickyCallBar';
 import { siteConfig } from '@/config/site';
 import './globals.css';
 
@@ -41,6 +42,8 @@ export const metadata: Metadata = {
     'hunting land maintenance Alabama',
     'firebreak construction Alabama',
     'firelane maintenance East Alabama',
+    'land clearing Notasulga AL',
+    'site preparation Lee County AL',
   ],
   category: 'Land clearing and site preparation contractor',
   other: {
@@ -69,11 +72,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           }}
         />
       </head>
-      <body>
+      <body className="has-sticky-call">
         <LocalBusinessJsonLd />
         <Header />
         <main>{children}</main>
         <Footer />
+        <StickyCallBar />
       </body>
     </html>
   );

@@ -2,8 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ButtonLink } from '@/components/ButtonLink';
 import { EstimateForm } from '@/components/EstimateForm';
+import { FaqSection } from '@/components/FaqSection';
 import { MovingHero } from '@/components/MovingHero';
+import { ProcessSteps } from '@/components/ProcessSteps';
 import { ReviewTicker } from '@/components/ReviewTicker';
+import { SeasonalBand } from '@/components/SeasonalBand';
 import { services } from '@/data/services';
 import { googleReviewProfile, testimonials } from '@/data/testimonials';
 
@@ -68,6 +71,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <SeasonalBand />
+
       <section className="paper-texture section-space">
         <div className="container-shell text-center">
           <p className="eyebrow text-brand-gold">What we do</p>
@@ -102,6 +107,8 @@ export default function HomePage() {
           <Image src="/media/excavator-land-clearing.webp" alt="Excavator clearing an East Alabama property for Rhino Landworks" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
         </div>
       </section>
+
+      <ProcessSteps />
 
       <section className="equipment-band bg-brand-ink py-16 text-white">
         <div className="container-shell">
@@ -157,7 +164,12 @@ export default function HomePage() {
               <figcaption className="image-label">Brush clearing</figcaption>
             </figure>
           </div>
-          <div className="mt-9 text-center"><ButtonLink href="/gallery">View more projects</ButtonLink></div>
+          <div className="mt-9 flex flex-col items-center gap-4 text-center">
+            <ButtonLink href="/gallery">View more projects</ButtonLink>
+            <Link href="/service-areas" className="text-sm font-black uppercase tracking-wider text-brand-green hover:text-brand-forest">
+              See where we work across East Alabama →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -192,6 +204,8 @@ export default function HomePage() {
           <ButtonLink href="/contact" className="bg-brand-forest text-white hover:bg-brand-ink">Get a free estimate</ButtonLink>
         </div>
       </section>
+
+      <FaqSection />
 
       <section className="section-space bg-brand-green text-white">
         <div className="container-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr]">

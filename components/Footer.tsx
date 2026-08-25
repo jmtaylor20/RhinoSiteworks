@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { CallLink } from '@/components/CallLink';
 import { siteConfig } from '@/config/site';
 import { services } from '@/data/services';
+import { serviceAreaTowns } from '@/data/serviceAreas';
 
 export function Footer() {
   return (
@@ -33,9 +34,24 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
+        <div className="container-shell py-8">
+          <h2 className="text-sm font-black uppercase tracking-[0.2em] text-brand-gold">
+            <Link href="/service-areas" className="hover:text-white">Service areas →</Link>
+          </h2>
+          <p className="mt-4 text-sm leading-7 text-white/55">
+            {serviceAreaTowns.join(' · ')}
+          </p>
+        </div>
+      </div>
+      <div className="border-t border-white/10">
         <div className="container-shell flex flex-col gap-3 py-6 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-          <div className="flex gap-5"><Link href="/sitemap.xml">Sitemap</Link><Link href="/contact">Request an estimate</Link></div>
+          <div className="flex flex-wrap gap-5">
+            <Link href="/service-areas">Service areas</Link>
+            <Link href="/#faq">FAQ</Link>
+            <Link href="/sitemap.xml">Sitemap</Link>
+            <Link href="/contact">Request an estimate</Link>
+          </div>
         </div>
       </div>
     </footer>

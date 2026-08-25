@@ -3,7 +3,7 @@ import { siteConfig } from '@/config/site';
 import { services } from '@/data/services';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ['', '/services', '/gallery', '/reviews', '/contact'].map((path) => ({
+  const routes = ['', '/services', '/service-areas', '/gallery', '/reviews', '/contact'].map((path) => ({
     url: `${siteConfig.url}${path}`,
     lastModified: new Date(),
     changeFrequency: path === '' ? ('weekly' as const) : ('monthly' as const),
