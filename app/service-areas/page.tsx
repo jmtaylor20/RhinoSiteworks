@@ -10,7 +10,7 @@ import { serviceAreaGroups, serviceAreaTowns } from '@/data/serviceAreas';
 export const metadata: Metadata = {
   title: 'Service Areas in East Alabama',
   description:
-    'Rhino Landwork provides land clearing, forestry mulching, bush hogging, grading, drainage, and gravel driveway services across Macon County, Lee County, and the surrounding East Alabama communities.',
+    'Land clearing, forestry mulching, bush hogging, grading, and drainage across Macon County, Lee County, Tuskegee, Auburn, Opelika, and East Alabama.',
   alternates: { canonical: '/service-areas' },
 };
 
@@ -54,7 +54,7 @@ export default function ServiceAreasPage() {
       <PageHero
         eyebrow="Where we work"
         title="Land work across East Alabama"
-        copy="Rhino Landwork runs out of Tuskegee and works the counties around it — from established lots in Auburn and Opelika to hunting tracts and rural acreage well off the pavement."
+        copy="Rhino Landwork runs out of Tuskegee and works the counties around it, from established lots in Auburn and Opelika to hunting tracts and rural acreage well off the pavement."
         image="/media/dozer-land-clearing.webp"
         imageAlt="Dozer clearing land on an East Alabama property"
       />
@@ -65,7 +65,7 @@ export default function ServiceAreasPage() {
             <p className="eyebrow text-brand-green">Counties and communities</p>
             <p className="text-lg leading-8 text-slate-600">
               Macon and Lee County are home turf and get the fastest turnaround. We regularly travel beyond them for
-              clearing, mulching, and site work — if your property is near the edge of this list, call and ask.
+              clearing, mulching, and site work. If your property is near the edge of this list, call and ask.
             </p>
           </div>
 

@@ -7,7 +7,7 @@ export const faqs: Faq[] = [
   {
     question: 'What areas does Rhino Landwork serve?',
     answer:
-      'We are based in Tuskegee and work across East Alabama, including Macon County, Lee County, and the surrounding communities around Auburn, Opelika, Notasulga, Shorter, Loachapoka, Waverly, and Salem. If your property sits just outside that area, call us — we travel for the right project.',
+      'We are based in Tuskegee and work across East Alabama, including Macon County, Lee County, and the surrounding communities around Auburn, Opelika, Notasulga, Shorter, Loachapoka, Waverly, and Salem. If your property sits just outside that area, call us. We travel for the right project.',
   },
   {
     question: 'How much does land clearing or forestry mulching cost?',
@@ -27,7 +27,7 @@ export const faqs: Faq[] = [
   {
     question: 'How soon can you start?',
     answer:
-      'Timing depends on our current schedule, the size of the job, and ground conditions — wet weather moves dirt work and grading around. Call or send an estimate request and we will tell you honestly where you would fall on the schedule.',
+      'Timing depends on our current schedule, the size of the job, and ground conditions. Wet weather moves dirt work and grading around. Call or send an estimate request and we will tell you honestly where you would fall on the schedule.',
   },
   {
     question: 'What information helps you give an accurate estimate?',
@@ -37,7 +37,7 @@ export const faqs: Faq[] = [
   {
     question: 'When is the best time of year for this kind of work?',
     answer:
-      'Dry ground is the biggest factor. Grading, driveways, and drainage go best when the site is not saturated. Clearing and mulching can be done year round, though visibility and access are better once vegetation has died back. Hunting-property work — shooting lanes, food-plot areas, trails, firebreaks, and firelanes — is usually scheduled in late summer and early fall ahead of the season.',
+      'Dry ground is the biggest factor. Grading, driveways, and drainage go best when the site is not saturated. Clearing and mulching can be done year round, though visibility and access are better once vegetation has died back. Hunting-property work (shooting lanes, food-plot areas, trails, firebreaks, and firelanes) is usually scheduled in late summer and early fall ahead of the season.',
   },
   {
     question: 'Can you work close to a house, fence, or shoreline without tearing up the property?',

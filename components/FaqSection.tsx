@@ -7,7 +7,7 @@ import { siteConfig } from '@/config/site';
  * the answers are in the HTML for crawlers with no client JavaScript, and
  * emits FAQPage structured data.
  *
- * Keep FAQPage schema on this one page only — duplicating it across routes
+ * Keep FAQPage schema on this one page only. Duplicating it across routes
  * dilutes the markup.
  */
 export function FaqSection() {

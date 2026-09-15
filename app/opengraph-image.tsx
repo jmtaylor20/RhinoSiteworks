@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 import { siteConfig } from '@/config/site';
 
-export const alt = `${siteConfig.name} — East Alabama land services`;
+export const alt = `${siteConfig.name}: East Alabama land services`;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 

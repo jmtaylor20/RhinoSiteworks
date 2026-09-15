@@ -6,8 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "lint": "eslint . && node scripts/check-dashes.mjs",
+    "typecheck": "tsc --noEmit",
+    "blur": "node scripts/generate-blur.mjs",
+    "check:dashes": "node scripts/check-dashes.mjs"
   },
   "dependencies": {
     "next": "15.5.22",

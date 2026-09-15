@@ -2,8 +2,8 @@ import { ButtonLink } from '@/components/ButtonLink';
 import { seasonalSpotlight } from '@/data/seasonal';
 
 /**
- * Timely "what we are booking now" band. The copy lives in data/seasonal.ts —
- * swap that file a few times a year rather than editing this layout.
+ * Timely "what we are booking now" band. The copy lives in data/seasonal.ts.
+ * Swap that file a few times a year rather than editing this layout.
  */
 export function SeasonalBand() {
   const { season, eyebrow, headline, copy, points, ctaLabel, ctaHref } = seasonalSpotlight;

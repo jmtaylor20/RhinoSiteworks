@@ -16,7 +16,7 @@ export const serviceAreaGroups: ServiceAreaGroup[] = [
   {
     county: 'Lee County',
     blurb:
-      'Rural acreage, new construction pads, and established lots around the Auburn and Opelika corridor — clearing, grading, drainage, and driveway work.',
+      'Rural acreage, new construction pads, and established lots around the Auburn and Opelika corridor: clearing, grading, drainage, and driveway work.',
     towns: ['Auburn', 'Opelika', 'Loachapoka', 'Waverly', 'Salem', 'Beauregard', 'Smiths Station'],
     primary: true,
   },
