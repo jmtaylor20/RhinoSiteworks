@@ -34,10 +34,37 @@ Visit `http://localhost:3000`.
 ## Quality checks
 
 ```bash
-npm run lint
+npm run lint       # eslint, then the em dash and en dash check
 npm run typecheck
 npm run build
 ```
+
+## Content and image conventions
+
+**No em dashes or en dashes.** House style forbids both. Use a comma, a colon,
+parentheses, or a new sentence, and the word "to" for ranges. Regular hyphens in
+compound words are fine. `npm run lint` fails the build if either character
+appears in the source, so this cannot regress silently.
+
+**Use `components/Photo.tsx`, not `next/image` directly.** Photo applies a blur
+placeholder from `data/mediaBlur.ts` so a tile is never an empty grey frame
+while its photo loads.
+
+**Always pass `sizes`.** Without it, next/image requests the 3840px variant no
+matter how small the image renders. The project photos are dense foliage and
+gravel, which compress badly, so that mistake cost 822KB per tile instead of
+98KB. Match `sizes` to the real rendered width.
+
+After adding or replacing anything in `public/media` or `public/brand`:
+
+```bash
+npm i --no-save sharp
+npm run blur
+```
+
+**Meta descriptions** should land between 140 and 160 characters and titles
+under 60. Service page descriptions live in the `metaDescription` field in
+`data/services.ts`, separate from the `shortDescription` used for on-page copy.
 
 ## Netlify deployment
 

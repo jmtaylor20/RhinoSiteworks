@@ -6,7 +6,7 @@ import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
   title: 'Request an Estimate',
-  description: `Request an estimate from ${siteConfig.name} for land clearing, grading, drainage, gravel, or property improvement.`,
+  description: `Free estimates on land clearing, forestry mulching, bush hogging, grading, drainage, and gravel driveways across East Alabama. Call ${siteConfig.phone}.`,
   alternates: { canonical: '/contact' },
 };
 

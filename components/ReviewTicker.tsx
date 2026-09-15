@@ -15,7 +15,7 @@ export function ReviewTicker() {
           {items.map((review, index) => (
             <blockquote key={`${review.name}-${index}`} className="review-ticker-item">
               <span>“{review.quote}”</span>
-              <cite>— {review.name}</cite>
+              <cite>{review.name}</cite>
             </blockquote>
           ))}
         </div>

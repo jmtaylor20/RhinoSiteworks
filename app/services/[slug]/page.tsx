@@ -16,11 +16,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return {};
   return {
     title: `${service.title} in East Alabama`,
-    description: service.shortDescription,
+    description: service.metaDescription,
     alternates: { canonical: `/services/${service.slug}` },
     openGraph: {
       title: `${service.title} in East Alabama`,
-      description: service.shortDescription,
+      description: service.metaDescription,
       url: `/services/${service.slug}`,
       ...(service.image ? { images: [{ url: service.image, alt: service.imageAlt || service.title }] } : {}),
     },
@@ -34,7 +34,7 @@ export default async function ServicePage({ params }: Props) {
   return (
     <>
       <ServiceJsonLd service={service} />
-      <PageHero eyebrow="Rhino Landworks service" title={service.title} copy={service.shortDescription} image={service.image} imageAlt={service.imageAlt} />
+      <PageHero eyebrow="Rhino Landwork service" title={service.title} copy={service.shortDescription} image={service.image} imageAlt={service.imageAlt} />
       <section className="section-space">
         <div className="container-shell grid gap-12 lg:grid-cols-[1.2fr_.8fr]">
           <article>

@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
+import { Photo } from '@/components/Photo';
 import { ButtonLink } from '@/components/ButtonLink';
 import { PageHero } from '@/components/PageHero';
 
 export const metadata: Metadata = {
-  title: 'East Alabama Land Clearing & Grading Project Gallery',
-  description: 'See real Rhino Landworks forestry mulching, land clearing, grading, drainage, gravel driveway, and site preparation projects in East Alabama.',
+  title: 'Land Clearing & Grading Project Gallery',
+  description: 'Real Rhino Landwork projects across East Alabama: forestry mulching, land clearing, grading, drainage, gravel driveways, and site preparation.',
   alternates: { canonical: '/gallery' },
 };
 
@@ -26,13 +26,20 @@ const projects = [
 export default function GalleryPage() {
   return (
     <>
-      <PageHero eyebrow="Our work" title="Built for the land. Focused on the result." copy="Real clearing, mulching, grading, drainage, driveway, and site-preparation work completed by Rhino Landworks." image="/media/dozer-road-grading.webp" imageAlt="Dozer grading an East Alabama access road" />
+      <PageHero eyebrow="Our work" title="Built for the land. Focused on the result." copy="Real clearing, mulching, grading, drainage, driveway, and site-preparation work completed by Rhino Landwork." image="/media/dozer-road-grading.webp" imageAlt="Dozer grading an East Alabama access road" />
       <section className="section-space">
         <div className="container-shell">
           <div className="grid gap-4 sm:grid-cols-2">
             {projects.map((project, index) => (
               <figure key={project.src} className={`project-frame ${index === 0 ? 'sm:col-span-2' : ''}`}>
-                <Image src={project.src} alt={project.alt} width={1600} height={1000} className={`w-full object-cover ${index === 0 ? 'h-[55vw] max-h-[650px]' : 'h-[420px]'}`} />
+                <Photo
+                  src={project.src}
+                  alt={project.alt}
+                  width={1600}
+                  height={1000}
+                  sizes={index === 0 ? '(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 1280px' : '(max-width: 640px) 100vw, 620px'}
+                  className={`w-full object-cover ${index === 0 ? 'h-[55vw] max-h-[650px]' : 'h-[420px]'}`}
+                />
                 <figcaption className="image-label">{project.label}</figcaption>
               </figure>
             ))}

@@ -7,7 +7,8 @@ import { siteConfig } from '@/config/site';
 import './globals.css';
 
 const previewTitle = `${siteConfig.name} | Land Clearing & Dirt Work in East Alabama`;
-const previewDescription = 'Clearing, mulching, grading, drainage, and gravel services for East Alabama properties.';
+const previewDescription =
+  'Land clearing, forestry mulching, bush hogging, grading, drainage, and gravel driveways across Tuskegee, Auburn, and Opelika. Free estimates, rated 5.0 on Google.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -55,7 +56,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <head>
-        {/* Google tag (gtag.js) — GA4 + Google Ads (Rhino Landwork, 497-803-2378) */}
+        {/* Google tag (gtag.js) for GA4 and Google Ads (Rhino Landwork, 497-803-2378) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-8KS3TWJGK4" />
         <script
           dangerouslySetInnerHTML={{

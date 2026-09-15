@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import { Photo } from '@/components/Photo';
 import { CallLink } from '@/components/CallLink';
 import { siteConfig } from '@/config/site';
 import { services } from '@/data/services';
@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="bg-brand-ink text-white">
       <div className="container-shell grid gap-12 py-16 md:grid-cols-3">
         <div>
-          <Image src="/brand/rhino-primary-white.png" alt={siteConfig.name} width={1820} height={510} className="h-auto w-72" />
+          <Photo src="/brand/rhino-primary-white.png" alt={`${siteConfig.name} logo`} width={1820} height={510} sizes="288px" className="h-auto w-72" />
           <p className="mt-5 max-w-sm text-white/65">{siteConfig.description}</p>
         </div>
         <div>

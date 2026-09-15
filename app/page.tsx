@@ -1,9 +1,9 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { ButtonLink } from '@/components/ButtonLink';
 import { EstimateForm } from '@/components/EstimateForm';
 import { FaqSection } from '@/components/FaqSection';
 import { MovingHero } from '@/components/MovingHero';
+import { Photo } from '@/components/Photo';
 import { ProcessSteps } from '@/components/ProcessSteps';
 import { ReviewTicker } from '@/components/ReviewTicker';
 import { SeasonalBand } from '@/components/SeasonalBand';
@@ -29,10 +29,10 @@ const trustPoints = [
 ];
 
 const equipment = [
-  ['Forestry mulchers', '/media/forestry-mulching-jobsite.webp'],
-  ['Excavators', '/media/excavator-and-dozer-jobsite.webp'],
-  ['Grading equipment', '/media/dozer-site-grading.webp'],
-  ['Tracked machines', '/media/dozer-land-clearing.webp'],
+  ['Forestry mulchers', '/media/forestry-mulching-jobsite.webp', 'Tracked forestry mulcher grinding brush on an East Alabama jobsite'],
+  ['Excavators', '/media/excavator-and-dozer-jobsite.webp', 'Excavator and dozer working a land clearing jobsite together'],
+  ['Grading equipment', '/media/dozer-site-grading.webp', 'Dozer grading and shaping soil during site preparation'],
+  ['Tracked machines', '/media/dozer-land-clearing.webp', 'Tracked dozer clearing wooded land for a property owner'],
 ];
 
 export default function HomePage() {
@@ -94,17 +94,17 @@ export default function HomePage() {
       <section id="about" className="grid bg-brand-forest text-white lg:grid-cols-2">
         <div className="flex items-center px-5 py-20 sm:px-10 lg:px-[max(2.5rem,calc((100vw-80rem)/2))]">
           <div className="max-w-2xl">
-            <p className="eyebrow text-brand-gold">About Rhino Landworks</p>
+            <p className="eyebrow text-brand-gold">About Rhino Landwork</p>
             <h2 className="mt-4 text-4xl font-black uppercase sm:text-5xl">Built on hard work.<br />Trusted across Alabama.</h2>
             <div className="mt-6 grid gap-5 text-lg leading-8 text-white/72">
-              <p>Rhino Landworks is a local land-service company specializing in clearing, forestry mulching, dirt work, drainage, access, and site preparation.</p>
+              <p>Rhino Landwork is a local land-service company specializing in clearing, forestry mulching, dirt work, drainage, access, and site preparation.</p>
               <p>Every project starts with the property itself: its terrain, access, water flow, and what you need the land to become.</p>
             </div>
             <ButtonLink href="/contact" className="mt-8">Talk about your property</ButtonLink>
           </div>
         </div>
         <div className="relative min-h-[520px]">
-          <Image src="/media/excavator-land-clearing.webp" alt="Excavator clearing an East Alabama property for Rhino Landworks" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+          <Photo src="/media/excavator-land-clearing.webp" alt="Excavator clearing an East Alabama property for Rhino Landwork" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
         </div>
       </section>
 
@@ -119,10 +119,10 @@ export default function HomePage() {
               <p className="mt-5 max-w-xl leading-7 text-white/65">The machine matters, but experience and a good site plan are what turn equipment hours into a finished property.</p>
             </div>
             <div className="grid grid-cols-2 gap-px bg-white/15 sm:grid-cols-4">
-              {equipment.map(([name, src]) => (
+              {equipment.map(([name, src, alt]) => (
                 <figure key={name} className="group bg-brand-ink">
                   <div className="relative h-36 overflow-hidden">
-                    <Image src={src} alt="" fill sizes="(max-width: 640px) 50vw, 25vw" className="object-cover opacity-75 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+                    <Photo src={src} alt={alt} fill sizes="(max-width: 640px) 50vw, 25vw" className="object-cover opacity-75 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
                   </div>
                   <figcaption className="border-t border-brand-gold/35 px-3 py-4 text-center text-xs font-black uppercase tracking-wider">{name}</figcaption>
                 </figure>
@@ -152,15 +152,15 @@ export default function HomePage() {
           </div>
           <div className="mt-12 grid gap-3 md:grid-cols-3">
             <figure className="project-frame">
-              <Image src="/media/gravel-driveway-installation.webp" alt="New gravel driveway installed on a rural East Alabama property" width={1920} height={1440} className="h-[430px] w-full object-cover" />
+              <Photo src="/media/gravel-driveway-installation.webp" alt="New gravel driveway installed on a rural East Alabama property" width={1920} height={1440} sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 420px" className="h-[430px] w-full object-cover" />
               <figcaption className="image-label">Gravel driveway</figcaption>
             </figure>
             <figure className="project-frame">
-              <Image src="/media/culvert-drainage-installation.webp" alt="Culvert pipe installation for improved property drainage" width={1920} height={1440} className="h-[430px] w-full object-cover" />
+              <Photo src="/media/culvert-drainage-installation.webp" alt="Culvert pipe installation for improved property drainage" width={1920} height={1440} sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 420px" className="h-[430px] w-full object-cover" />
               <figcaption className="image-label bg-brand-gold text-brand-ink">Culvert drainage</figcaption>
             </figure>
             <figure className="project-frame">
-              <Image src="/media/brush-clearing-excavator.webp" alt="Excavator removing brush and reclaiming overgrown land" width={1920} height={1440} className="h-[430px] w-full object-cover" />
+              <Photo src="/media/brush-clearing-excavator.webp" alt="Excavator removing brush and reclaiming overgrown land" width={1920} height={1440} sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 420px" className="h-[430px] w-full object-cover" />
               <figcaption className="image-label">Brush clearing</figcaption>
             </figure>
           </div>
@@ -184,7 +184,7 @@ export default function HomePage() {
               <figure key={review.name} className="bg-black/25 p-7 text-center ring-1 ring-white/5">
                 <div className="text-lg tracking-[0.2em] text-brand-gold" aria-label="5 out of 5 stars">★★★★★</div>
                 <blockquote className="mt-5 leading-7 text-white/75">“{review.quote}”</blockquote>
-                <figcaption className="mt-6 text-sm font-black uppercase tracking-wider">— {review.name}</figcaption>
+                <figcaption className="mt-6 text-sm font-black uppercase tracking-wider">{review.name}</figcaption>
               </figure>
             ))}
           </div>
@@ -196,7 +196,7 @@ export default function HomePage() {
 
       <section className="bg-brand-gold py-12 text-brand-ink">
         <div className="container-shell grid items-center gap-8 lg:grid-cols-[auto_1fr_auto]">
-          <Image src="/brand/rhino-badge.png" alt="" width={1470} height={1070} className="hidden h-28 w-40 bg-white object-contain lg:block" />
+          <Photo src="/brand/rhino-badge.png" alt="Rhino Landwork rhino head badge" width={1470} height={1070} sizes="160px" className="hidden h-28 w-40 bg-white object-contain lg:block" />
           <div>
             <h2 className="text-4xl font-black uppercase">Ready to improve your land?</h2>
             <p className="mt-2 font-semibold">Tell us what the property needs and get a clear next step.</p>
@@ -212,7 +212,7 @@ export default function HomePage() {
           <div>
             <p className="eyebrow text-brand-gold">Start your project</p>
             <h2 className="mt-4 text-4xl font-black uppercase sm:text-5xl">Tell us about the property.</h2>
-            <p className="mt-5 text-lg leading-8 text-white/70">Share the location, the problem, and the result you want. Rhino Landworks will follow up about access, scope, and timing.</p>
+            <p className="mt-5 text-lg leading-8 text-white/70">Share the location, the problem, and the result you want. Rhino Landwork will follow up about access, scope, and timing.</p>
           </div>
           <EstimateForm />
         </div>

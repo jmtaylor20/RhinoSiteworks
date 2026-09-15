@@ -11,7 +11,7 @@ type CallLinkProps = {
  * Phone link that reports a Google Ads "Calls from Website" conversion.
  * Conversion: AW-16472265989/qYN-CM_l298cEIWqy649
  *
- * The event is fired but navigation is never blocked — if gtag is missing,
+ * The event is fired but navigation is never blocked. If gtag is missing,
  * blocked by an ad blocker, or slow, the call still goes through.
  */
 export function CallLink({ className, children }: CallLinkProps) {

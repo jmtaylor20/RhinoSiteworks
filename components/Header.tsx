@@ -1,9 +1,9 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { CallLink } from '@/components/CallLink';
+import { Photo } from '@/components/Photo';
 import { siteConfig } from '@/config/site';
 
 export function Header() {
@@ -13,12 +13,13 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b-2 border-brand-gold bg-brand-forest text-white shadow-lg">
       <div className="container-shell flex h-[88px] items-center justify-between gap-4 sm:h-[112px]">
         <Link href="/" className="flex shrink-0 items-center" aria-label={`${siteConfig.name} home`}>
-          <Image
+          <Photo
             src="/brand/rhino-primary.png"
-            alt="Rhino Landworks"
+            alt="Rhino Landwork logo"
             width={1778}
             height={583}
             priority
+            sizes="(max-width: 640px) 218px, (max-width: 1280px) 280px, 305px"
             className="h-auto w-[218px] object-contain sm:w-[280px] xl:w-[305px]"
           />
         </Link>
