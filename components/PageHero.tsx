@@ -1,16 +1,35 @@
 import { Photo } from '@/components/Photo';
+import { heroVariant } from '@/lib/heroVariant';
 
-type Props = { eyebrow: string; title: string; copy: string; image?: string; imageAlt?: string };
+type Props = {
+  eyebrow: string;
+  title: string;
+  copy: string;
+  image?: string;
+  imageAlt?: string;
+  /** Optional call to action row rendered under the copy. */
+  children?: React.ReactNode;
+};
 
-export function PageHero({ eyebrow, title, copy, image, imageAlt = '' }: Props) {
+export function PageHero({ eyebrow, title, copy, image, imageAlt = '', children }: Props) {
   return (
     <section className="relative isolate overflow-hidden bg-brand-forest py-20 text-white sm:py-28">
-      {image && <Photo src={image} alt={imageAlt} fill priority sizes="100vw" className="-z-20 object-cover opacity-40" />}
+      {image && (
+        <Photo
+          src={heroVariant(image)}
+          alt={imageAlt}
+          fill
+          priority
+          sizes="100vw"
+          className="-z-20 object-cover opacity-40"
+        />
+      )}
       {image && <div className="absolute inset-0 -z-10 bg-gradient-to-r from-brand-forest via-brand-forest/95 to-brand-forest/45" />}
       <div className="container-shell relative">
         <p className="eyebrow text-brand-gold">{eyebrow}</p>
         <h1 className="mt-4 max-w-4xl text-5xl font-black uppercase leading-tight sm:text-7xl">{title}</h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-white/75">{copy}</p>
+        {children}
       </div>
     </section>
   );

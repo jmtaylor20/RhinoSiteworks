@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: 'Rhino',
   description:
     'East Alabama land clearing, forestry mulching, bush hogging, hunting land maintenance, grading, drainage, firebreak, firelane, gravel driveway, and property reclamation services.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://rhinositeworks.netlify.app',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://rhinolandwork.com',
   email: 'WeGoRhino@gmail.com',
   phone: '334-707-7874',
   phoneHref: '+13347077874',

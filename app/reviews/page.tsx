@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ButtonLink } from '@/components/ButtonLink';
 import { Photo } from '@/components/Photo';
+import { heroVariant } from '@/lib/heroVariant';
 import { googleReviewProfile, testimonials } from '@/data/testimonials';
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export default function ReviewsPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-brand-ink py-20 text-white sm:py-28">
-        <Photo src="/media/finished-site-grading.webp" alt="Finished grading work on an East Alabama property" fill priority sizes="100vw" className="object-cover opacity-25" />
+        <Photo src={heroVariant('/media/finished-site-grading.webp')} alt="Finished grading work on an East Alabama property" fill priority sizes="100vw" className="object-cover opacity-25" />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-ink via-brand-ink/95 to-brand-forest/70" />
         <div className="container-shell relative grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
