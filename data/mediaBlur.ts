@@ -5,7 +5,7 @@
  * imported images. Ours are referenced by path, so the placeholders are
  * pregenerated here and applied by components/Photo.tsx.
  *
- * Generated file. Do not edit by hand. Regenerate with: npm run blur
+ * Generated file. Do not edit by hand. Regenerate with: npm run media
  */
 export const mediaBlur: Record<string, string> = {
   '/media/brush-clearing-excavator.webp': 'data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAgCdASoMAAkABABsJZgCdAEKzZ0u1BgAAPazZCEv+HuLdWP+aikbmX9M6DjUzqLtRNhrwYNU7RBvzwAAAA==',
@@ -20,6 +20,18 @@ export const mediaBlur: Record<string, string> = {
   '/media/forestry-mulching-jobsite.webp': 'data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoMAAkABABsJbAC7ADdphRdMAD+qhfdr/5vS7iMT6KGP7Qyd1W03wqzhh6g5RkI0GjpFsiYRpVi3gAA',
   '/media/gravel-driveway-installation.webp': 'data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoMAAkABABsJYgAAvad9/L8CAAA/rqFbKMd7STDst0FOvPmWcBifetjJBY8+R5RYqlQ/TuTB9uvGJQA',
   '/media/hero-land-clearing-poster.webp': 'data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoMAAcABABsJYgCdADHiU3DAAD+MVtKJSnLJr6YLzrkyZBD2R84zKW+UBq+aqyLAAA=',
+  '/media/hero/brush-clearing-excavator.webp': 'data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAgCdASoMAAkABABsJZgCdAEKzZ0uwSAAAPazZCEv+HuLdWP+aikbmX9M6DjUzqLtRNhrwYNU7RD6Ud4AAA==',
+  '/media/hero/culvert-drainage-installation.webp': 'data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoMAAkABABsJbACdAEJCVq9oAAA/nkJCJPjo5vlhwqP4T8/v8/Cj/3oT9DerQmu7ZoWmv1I9NPZgAAA',
+  '/media/hero/dozer-land-clearing.webp': 'data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoMAAkABABsJagCdADcEbjFAAD6n67vZq1CkB+JlEyCzn4aoHeUdh+QY8HoomylprBmAAAA',
+  '/media/hero/dozer-road-grading.webp': 'data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoMAAkABABsJYgCdAEYGwMWCYgA99tkPXpaS/UaFE0fJIpVZStBXHs9rdYJOES1JbMxNHvUAAA=',
+  '/media/hero/dozer-site-grading.webp': 'data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoMAAkABABsJQBOgCPmu2nMAAD+W/kmLIRY3F5I9XjnLvAi1BFGndsoOMAgJEP9vDMYHwdJhMoWZUQrAAA=',
+  '/media/hero/dump-truck-dirt-delivery.webp': 'data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACwAQCdASoMAAkABABsJZgCdAD1P8hAAP4nvQtQVTPSjKswTre5XteuY3l5vZDTF8ZKS19UOgnXjNZFKVXjOQAA',
+  '/media/hero/excavator-and-dozer-jobsite.webp': 'data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADwAQCdASoMAAkABABsJZQCdAEU8GrneAAA8qJH5HjUtupri7GlGUst/sg7agXraejs1PqKJwkwAA==',
+  '/media/hero/excavator-land-clearing.webp': 'data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoMAAkABABsJYgCdACqGtuUAAD9Urt1C2Rjna2rAelZWwdhPNtEze9FpMpN9ES80AA=',
+  '/media/hero/finished-site-grading.webp': 'data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACQAQCdASoMAAkABABsJYgCdADYP4AA+GKzSmBA2pSsV/7YMXTRgb7d6nSwWWCdXgHm3+iVoFVmAA==',
+  '/media/hero/forestry-mulching-jobsite.webp': 'data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoMAAkABABsJbAC7ADdoFJdAAD+qhfdrykSLcdvlDH9oZO6rabwZSddYJ8dK9/MGkWyJhGlWLeAAA==',
+  '/media/hero/gravel-driveway-installation.webp': 'data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoMAAkABABsJYgAAvad2hffjgAA/rqFbKMd7STDst0FOvPmWcBifetjI+17lHIth4Z++F6Fc22vGAAA',
+  '/media/hero/hero-land-clearing-poster.webp': 'data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoMAAcABABsJYgCdADHiU3DAAD+MVtKJSnLJr6YLzrkyZBD2R84zKW+UBq+aqyLAAA=',
   '/brand/rhino-badge.png': 'data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQAgCdASoMAAkABABsJaACdAEQE/Gq8Q8QAP5rXaNrgvt6G4aZo0go10xLm4j4RwfmWWItic9nYhrhjUWP+dLcnJ+OEMKMhdDCjGEBAAA=',
   '/brand/rhino-primary-color.png': 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACwAQCdASoMAAQABABsJZAAAud7sIgAAP510mMtZlg1tmTCwsjs3/xChhW1wAAA',
   '/brand/rhino-primary-white-sans-domain.png': 'data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoMAAQABABsJZQCdAEPA+odAAD9UE61nZ3JKHzttkcXpNwPXCkD+IuAAAA=',

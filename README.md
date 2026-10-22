@@ -55,12 +55,31 @@ matter how small the image renders. The project photos are dense foliage and
 gravel, which compress badly, so that mistake cost 822KB per tile instead of
 98KB. Match `sizes` to the real rendered width.
 
+**Hero backgrounds use the derivatives in `public/media/hero`.** They render at
+25 to 40 percent opacity behind a gradient, so they are slightly blurred and
+heavily compressed: about 8x lighter than the originals and indistinguishable
+on screen. They are the LCP element on every landing page, so do not point a
+hero at a full-detail original. `lib/heroVariant.ts` does the swap.
+
 After adding or replacing anything in `public/media` or `public/brand`:
 
 ```bash
 npm i --no-save sharp
-npm run blur
+npm run media
 ```
+
+## Paid traffic landing pages
+
+`/services/bush-hogging`, `/services/grading-dirt-work`, and `/contact` receive
+Google Ads traffic. Google rates landing page experience, and a thin or slow
+page costs money on every click. Those pages need to keep:
+
+- The phone number and an estimate call to action visible without scrolling
+- The estimate form on the page itself, never only a link to `/contact`
+- The service's real search terms in the H1 and opening paragraph
+- Enough substance to answer what the service is, what it costs, and when to do
+  it, which is what `sections` and `faqs` in `data/services.ts` are for
+- Trust signals near the top, via `components/TrustStrip.tsx`
 
 **Meta descriptions** should land between 140 and 160 characters and titles
 under 60. Service page descriptions live in the `metaDescription` field in

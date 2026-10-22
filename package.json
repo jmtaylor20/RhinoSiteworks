@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "eslint . && node scripts/check-dashes.mjs",
     "typecheck": "tsc --noEmit",
-    "blur": "node scripts/generate-blur.mjs",
-    "check:dashes": "node scripts/check-dashes.mjs"
+    "check:dashes": "node scripts/check-dashes.mjs",
+    "media": "node scripts/generate-media.mjs"
   },
   "dependencies": {
     "next": "15.5.22",

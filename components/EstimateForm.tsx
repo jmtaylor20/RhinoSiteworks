@@ -7,7 +7,12 @@ import { services } from '@/data/services';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
-export function EstimateForm() {
+type EstimateFormProps = {
+  /** Preselects the service dropdown. Service landing pages pass their own. */
+  defaultService?: string;
+};
+
+export function EstimateForm({ defaultService }: EstimateFormProps = {}) {
   const [status, setStatus] = useState<Status>('idle');
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -51,7 +56,7 @@ export function EstimateForm() {
         <FormField label="Property location"><input name="property-location" autoComplete="street-address" placeholder="City, county, or address" /></FormField>
       </div>
       <FormField label="Service needed">
-        <select required name="service" defaultValue="">
+        <select required name="service" defaultValue={defaultService ?? ''}>
           <option value="" disabled>Select a service</option>
           {services.map((service) => <option key={service.slug} value={service.title}>{service.title}</option>)}
           <option value="Other">Other / special project</option>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Photo } from '@/components/Photo';
+import { heroVariant } from '@/lib/heroVariant';
 import { ButtonLink } from '@/components/ButtonLink';
 import { services } from '@/data/services';
 
@@ -14,7 +15,7 @@ export default function ServicesPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-brand-forest py-20 text-white sm:py-28">
-        <Photo src="/media/dozer-land-clearing.webp" alt="Dozer clearing and preparing land in East Alabama" fill priority sizes="100vw" className="object-cover opacity-35" />
+        <Photo src={heroVariant('/media/dozer-land-clearing.webp')} alt="Dozer clearing and preparing land in East Alabama" fill priority sizes="100vw" className="object-cover opacity-35" />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-forest via-brand-forest/90 to-brand-forest/50" />
         <div className="container-shell relative grid items-center gap-10 lg:grid-cols-[1fr_360px]">
           <div>
