@@ -196,7 +196,7 @@ export const services: Service[] = [
     title: 'Hunting Land Maintenance',
     metaDescription: 'Hunting land maintenance across East Alabama: trails, access roads, shooting lanes, food-plot areas, firebreaks, and firelanes. Book before the season.',
     shortDescription: 'Maintain hunting property access, trails, lanes, food-plot areas, drainage, and overgrowth throughout the year.',
-    description: 'Good hunting land needs practical access and consistent upkeep. Rhino Landwork combines clearing, grading, bush hogging, and drainage work to maintain trails, shooting lanes, food-plot areas, firebreaks, and firelanes around the way you use the property.',
+    description: 'Good hunting land needs practical access and consistent upkeep. Rhino Landwork combines clearing, grading, bush hogging, and drainage work to maintain trails, shooting lanes, food-plot areas, firebreaks, and firelanes around the way you use the property. This is the year-round upkeep side. If the ground still needs opening up for the first time, start with hunting land clearing.',
     benefits: ['Trail and access-road maintenance', 'Shooting-lane and food-plot area preparation', 'Firebreak and firelane maintenance', 'Brush control and drainage improvement'],
     image: '/media/dozer-road-grading.webp',
     imageAlt: 'Dozer maintaining an access road through wooded hunting land',
