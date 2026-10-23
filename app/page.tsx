@@ -17,7 +17,7 @@ const serviceCodes: Record<string, string> = {
   drainage: 'DR',
   'gravel-driveways': 'GD',
   'bush-hogging': 'BH',
-  'hunting-land-maintenance': 'HL',
+  'hunting-land-clearing': 'HL',
   'property-reclamation': 'PR',
 };
 
@@ -86,6 +86,13 @@ export default function HomePage() {
                 <Link href={`/services/${service.slug}`} className="mt-auto pt-6 text-sm font-black uppercase tracking-wider text-brand-green">Learn more →</Link>
               </article>
             ))}
+            {/* Hunting land clearing lives at its own top-level route, not under /services. */}
+            <article className="service-tile group flex min-h-80 flex-col bg-white p-6 text-left">
+              <span className="service-glyph" aria-hidden="true">{serviceCodes['hunting-land-clearing']}</span>
+              <h3 className="mt-6 text-xl font-black uppercase text-brand-forest">Hunting Land Clearing</h3>
+              <p className="mt-4 text-sm leading-6 text-slate-600">Shooting lanes, food plots, trails, firebreaks, and year-round upkeep for hunting property.</p>
+              <Link href="/hunting-land-clearing" className="mt-auto pt-6 text-sm font-black uppercase tracking-wider text-brand-green">Learn more →</Link>
+            </article>
           </div>
           <ButtonLink href="/services" className="mt-10">View all services</ButtonLink>
         </div>

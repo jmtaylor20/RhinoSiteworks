@@ -10,9 +10,14 @@ type Status = 'idle' | 'submitting' | 'success' | 'error';
 type EstimateFormProps = {
   /** Preselects the service dropdown. Service landing pages pass their own. */
   defaultService?: string;
+  /**
+   * Which page the lead came from, recorded with the submission so landing
+   * page performance can be told apart in the Netlify form inbox.
+   */
+  pageSource?: string;
 };
 
-export function EstimateForm({ defaultService }: EstimateFormProps = {}) {
+export function EstimateForm({ defaultService, pageSource }: EstimateFormProps = {}) {
   const [status, setStatus] = useState<Status>('idle');
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -46,6 +51,7 @@ export function EstimateForm({ defaultService }: EstimateFormProps = {}) {
   return (
     <form name="estimate-request" onSubmit={handleSubmit} className="grid gap-5 rounded-sm bg-white p-6 text-brand-ink shadow-lift sm:p-8">
       <input type="hidden" name="form-name" value="estimate-request" />
+      {pageSource && <input type="hidden" name="page-source" value={pageSource} />}
       <p className="hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabIndex={-1} autoComplete="off" /></label></p>
       <div className="grid gap-5 sm:grid-cols-2">
         <FormField label="Full name"><input required name="name" autoComplete="name" /></FormField>
@@ -59,6 +65,7 @@ export function EstimateForm({ defaultService }: EstimateFormProps = {}) {
         <select required name="service" defaultValue={defaultService ?? ''}>
           <option value="" disabled>Select a service</option>
           {services.map((service) => <option key={service.slug} value={service.title}>{service.title}</option>)}
+          <option value="Hunting Land Clearing">Hunting Land Clearing</option>
           <option value="Other">Other / special project</option>
         </select>
       </FormField>

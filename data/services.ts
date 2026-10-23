@@ -192,16 +192,6 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: 'hunting-land-maintenance',
-    title: 'Hunting Land Maintenance',
-    metaDescription: 'Hunting land maintenance across East Alabama: trails, access roads, shooting lanes, food-plot areas, firebreaks, and firelanes. Book before the season.',
-    shortDescription: 'Maintain hunting property access, trails, lanes, food-plot areas, drainage, and overgrowth throughout the year.',
-    description: 'Good hunting land needs practical access and consistent upkeep. Rhino Landwork combines clearing, grading, bush hogging, and drainage work to maintain trails, shooting lanes, food-plot areas, firebreaks, and firelanes around the way you use the property.',
-    benefits: ['Trail and access-road maintenance', 'Shooting-lane and food-plot area preparation', 'Firebreak and firelane maintenance', 'Brush control and drainage improvement'],
-    image: '/media/dozer-road-grading.webp',
-    imageAlt: 'Dozer maintaining an access road through wooded hunting land',
-  },
-  {
     slug: 'property-reclamation',
     title: 'Property Reclamation',
     metaDescription: 'Property reclamation across East Alabama. Clearing, mulching, grading, and cleanup that bring neglected land back into safe, usable condition.',
@@ -214,3 +204,15 @@ export const services: Service[] = [
 ];
 
 export const getService = (slug: string) => services.find((service) => service.slug === slug);
+
+/**
+ * Everything we offer, for navigation and listings.
+ *
+ * Most entries are /services/<slug> pages generated from `services` above.
+ * Hunting land clearing has its own top-level page instead, so listings read
+ * from here rather than mapping `services` directly.
+ */
+export const serviceLinks: { title: string; href: string }[] = [
+  ...services.map((service) => ({ title: service.title, href: `/services/${service.slug}` })),
+  { title: 'Hunting Land Clearing', href: '/hunting-land-clearing' },
+];

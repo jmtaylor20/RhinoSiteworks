@@ -36,7 +36,7 @@ export function LocalBusinessJsonLd() {
       'Land clearing',
       'Forestry mulching',
       'Bush hogging',
-      'Hunting land maintenance',
+      'Hunting land clearing and maintenance',
       'Grading and dirt work',
       'Drainage solutions',
       'Firebreaks and firelanes',

@@ -7,7 +7,7 @@ import { services } from '@/data/services';
 
 export const metadata: Metadata = {
   title: 'Land Clearing & Land Management Services',
-  description: 'Land clearing, forestry mulching, bush hogging, hunting land maintenance, grading, drainage, gravel driveways, firebreaks, and firelanes in East Alabama.',
+  description: 'Land clearing, forestry mulching, bush hogging, hunting land clearing, grading, drainage, gravel driveways, firebreaks, and firelanes in East Alabama.',
   alternates: { canonical: '/services' },
 };
 
@@ -45,6 +45,17 @@ export default function ServicesPage() {
               <Link href={`/services/${service.slug}`} className="inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-green text-2xl font-black text-brand-green transition group-hover:bg-brand-green group-hover:text-white" aria-label={`Learn more about ${service.title}`}>→</Link>
             </article>
           ))}
+          {/* Lives at its own top-level route rather than under /services. */}
+          <article className="group grid gap-5 py-8 transition md:grid-cols-[.8fr_1.2fr_auto] md:items-center">
+            <h2 className="text-3xl font-black uppercase transition group-hover:text-brand-green">Hunting Land Clearing</h2>
+            <div>
+              <p className="leading-7 text-slate-600">Shooting lanes, food plots, trails, and access roads opened up before season, plus year-round upkeep.</p>
+              <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-bold text-brand-green">
+                {['Shooting lanes and food plots', 'Trails and access roads', 'Firebreaks and firelanes', 'Brush control and drainage'].map((benefit) => <li key={benefit}>✓ {benefit}</li>)}
+              </ul>
+            </div>
+            <Link href="/hunting-land-clearing" className="inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-green text-2xl font-black text-brand-green transition group-hover:bg-brand-green group-hover:text-white" aria-label="Learn more about Hunting Land Clearing">→</Link>
+          </article>
           </div>
           <aside className="mt-12 grid gap-6 bg-brand-forest p-8 text-white md:grid-cols-[1fr_auto] md:items-center sm:p-10">
             <div>

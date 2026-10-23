@@ -4,7 +4,7 @@ import { ButtonLink } from '@/components/ButtonLink';
 import { CallLink } from '@/components/CallLink';
 import { PageHero } from '@/components/PageHero';
 import { siteConfig } from '@/config/site';
-import { services } from '@/data/services';
+import { serviceLinks } from '@/data/services';
 import { serviceAreaGroups, serviceAreaTowns } from '@/data/serviceAreas';
 
 export const metadata: Metadata = {
@@ -105,10 +105,10 @@ export default function ServiceAreasPage() {
             </p>
           </div>
           <ul className="grid gap-px self-start bg-white/20 sm:grid-cols-2">
-            {services.map((service) => (
-              <li key={service.slug} className="bg-brand-forest">
-                <Link href={`/services/${service.slug}`} className="flex min-h-16 items-center justify-between gap-4 px-6 py-4 text-sm font-black uppercase tracking-wider hover:bg-brand-green">
-                  {service.title}
+            {serviceLinks.map((link) => (
+              <li key={link.href} className="bg-brand-forest">
+                <Link href={link.href} className="flex min-h-16 items-center justify-between gap-4 px-6 py-4 text-sm font-black uppercase tracking-wider hover:bg-brand-green">
+                  {link.title}
                   <span aria-hidden="true" className="text-brand-gold">→</span>
                 </Link>
               </li>

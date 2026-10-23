@@ -40,6 +40,7 @@ export const metadata: Metadata = {
     'property drainage contractor',
     'brush clearing Macon County',
     'bush hogging East Alabama',
+    'hunting land clearing Alabama',
     'hunting land maintenance Alabama',
     'firebreak construction Alabama',
     'firelane maintenance East Alabama',
