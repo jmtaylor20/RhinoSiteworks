@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { ButtonLink } from '@/components/ButtonLink';
 import { CallLink } from '@/components/CallLink';
 import { EstimateForm } from '@/components/EstimateForm';
@@ -9,14 +8,14 @@ import { siteConfig } from '@/config/site';
 import { heroVariant } from '@/lib/heroVariant';
 
 export const metadata: Metadata = {
-  title: 'Hunting Land Clearing in East Alabama',
+  title: 'Hunting Land Clearing & Maintenance in East Alabama',
   description:
-    'Hunting land clearing around Tuskegee, Auburn, and Opelika. Shooting lanes, food plots, trails, and access roads opened up before season. Free quotes.',
+    'Hunting land clearing and maintenance around Tuskegee, Auburn, and Opelika. Shooting lanes, food plots, trails, firebreaks, and access roads. Free quotes.',
   alternates: { canonical: '/hunting-land-clearing' },
   openGraph: {
-    title: 'Hunting Land Clearing in East Alabama',
+    title: 'Hunting Land Clearing & Maintenance in East Alabama',
     description:
-      'Shooting lanes, food plots, trails, and access roads cleared before season by Rhino Landwork.',
+      'Shooting lanes, food plots, trails, firebreaks, and access roads cleared and maintained by Rhino Landwork.',
     url: '/hunting-land-clearing',
     images: [{ url: '/media/dozer-road-grading.webp', alt: 'Dozer cutting an access road through wooded hunting land' }],
   },
@@ -38,6 +37,30 @@ const whatWeDo = [
   {
     title: 'Overgrown property',
     copy: 'Reclaim hunting land that has grown up and turn it back into usable ground.',
+  },
+];
+
+/**
+ * Carried over from the retired /services/hunting-land-maintenance page.
+ * Firebreaks, firelanes, drainage, and brush control were only covered there,
+ * and the year-round upkeep angle is what that page ranked for.
+ */
+const yearRound = [
+  {
+    title: 'Firebreaks and firelanes',
+    copy: 'Establish or maintain cleared lanes that improve access around wooded acreage and help separate fuels. Often cut at the same time as trails and property lines.',
+  },
+  {
+    title: 'Drainage on trails and plots',
+    copy: 'Keep access roads from washing out and correct standing water around food plots and low ground, with swales, water bars, and culvert work where the terrain needs it.',
+  },
+  {
+    title: 'Brush control through the season',
+    copy: 'Bush hogging fields, lanes, and plot edges so the ground you opened up does not grow back in. One to three cuts a year keeps a property manageable.',
+  },
+  {
+    title: 'Trail and access-road upkeep',
+    copy: 'Regrade and maintain what we cut, so trails stay quiet and passable and trucks and ATVs can still get where they need to go year after year.',
   },
 ];
 
@@ -69,7 +92,7 @@ function HuntingLandJsonLd() {
         '@id': `${siteConfig.url}/hunting-land-clearing/#service`,
         name: 'Hunting Land Clearing',
         description:
-          'Shooting lanes, food plot preparation, hunting trails, access roads, and overgrown property reclamation for hunting land across East Alabama.',
+          'Shooting lanes, food plot preparation, hunting trails, access roads, firebreaks, firelanes, drainage, brush control, and overgrown property reclamation for hunting land across East Alabama.',
         url: `${siteConfig.url}/hunting-land-clearing`,
         image: `${siteConfig.url}/media/dozer-road-grading.webp`,
         provider: { '@id': `${siteConfig.url}/#business` },
@@ -77,11 +100,11 @@ function HuntingLandJsonLd() {
           '@type': name.includes('County') ? 'AdministrativeArea' : 'City',
           name,
         })),
-        serviceType: 'Hunting land clearing',
+        serviceType: 'Hunting land clearing and maintenance',
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
-          name: 'Hunting land clearing',
-          itemListElement: whatWeDo.map((item) => ({
+          name: 'Hunting land clearing and maintenance',
+          itemListElement: [...whatWeDo, ...yearRound].map((item) => ({
             '@type': 'Offer',
             itemOffered: { '@type': 'Service', name: item.title, description: item.copy },
           })),
@@ -153,6 +176,21 @@ export default function HuntingLandClearingPage() {
             <h2 className="mt-12 text-3xl font-black uppercase text-brand-forest sm:text-4xl">What we do</h2>
             <div className="mt-8 grid gap-px bg-brand-forest/15">
               {whatWeDo.map((item) => (
+                <div key={item.title} className="bg-white p-6 sm:p-7">
+                  <h3 className="text-xl font-black uppercase text-brand-forest">{item.title}</h3>
+                  <p className="mt-3 leading-7 text-slate-600">{item.copy}</p>
+                </div>
+              ))}
+            </div>
+
+            <h2 className="mt-14 text-3xl font-black uppercase text-brand-forest sm:text-4xl">Year-round upkeep</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Opening the ground up is the first job. Keeping it that way is the next one. We handle hunting land
+              maintenance through the rest of the year too, so the trails, plots, and lanes you paid to cut are still
+              there next season.
+            </p>
+            <div className="mt-8 grid gap-px bg-brand-forest/15">
+              {yearRound.map((item) => (
                 <div key={item.title} className="bg-white p-6 sm:p-7">
                   <h3 className="text-xl font-black uppercase text-brand-forest">{item.title}</h3>
                   <p className="mt-3 leading-7 text-slate-600">{item.copy}</p>
@@ -237,15 +275,10 @@ export default function HuntingLandClearingPage() {
               Call {siteConfig.phone}
             </CallLink>
             <p className="mt-8 text-sm leading-7 text-white/60">
-              Serving Tuskegee, Auburn, Opelika and surrounding Alabama communities. For year-round upkeep once the
-              ground is opened up, see{' '}
-              <Link href="/services/hunting-land-maintenance" className="font-bold text-brand-gold underline hover:text-white">
-                hunting land maintenance
-              </Link>
-              .
+              Serving Tuskegee, Auburn, Opelika and surrounding Alabama communities.
             </p>
           </div>
-          <EstimateForm defaultService="Hunting Land Maintenance" pageSource="hunting-land-clearing" />
+          <EstimateForm defaultService="Hunting Land Clearing" pageSource="hunting-land-clearing" />
         </div>
       </section>
     </>

@@ -5,6 +5,15 @@
   NODE_VERSION = "22"
   NPM_FLAGS = "--no-audit --no-fund"
 
+# /services/hunting-land-maintenance was consolidated into
+# /hunting-land-clearing. The old URL was live and indexed, so this is a
+# permanent redirect rather than a deletion.
+[[redirects]]
+  from = "/services/hunting-land-maintenance"
+  to = "/hunting-land-clearing"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]

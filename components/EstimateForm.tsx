@@ -65,6 +65,7 @@ export function EstimateForm({ defaultService, pageSource }: EstimateFormProps =
         <select required name="service" defaultValue={defaultService ?? ''}>
           <option value="" disabled>Select a service</option>
           {services.map((service) => <option key={service.slug} value={service.title}>{service.title}</option>)}
+          <option value="Hunting Land Clearing">Hunting Land Clearing</option>
           <option value="Other">Other / special project</option>
         </select>
       </FormField>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Photo } from '@/components/Photo';
 import { CallLink } from '@/components/CallLink';
 import { siteConfig } from '@/config/site';
-import { services } from '@/data/services';
+import { serviceLinks } from '@/data/services';
 import { serviceAreaTowns } from '@/data/serviceAreas';
 
 export function Footer() {
@@ -16,10 +16,9 @@ export function Footer() {
         <div>
           <h2 className="text-sm font-black uppercase tracking-[0.2em] text-brand-gold">Services</h2>
           <div className="mt-5 grid gap-3">
-            {services.map((service) => (
-              <Link key={service.slug} href={`/services/${service.slug}`} className="text-white/70 hover:text-white">{service.title}</Link>
+            {serviceLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="text-white/70 hover:text-white">{link.title}</Link>
             ))}
-            <Link href="/hunting-land-clearing" className="font-bold text-brand-gold hover:text-white">Hunting Land Clearing</Link>
           </div>
         </div>
         <div>
