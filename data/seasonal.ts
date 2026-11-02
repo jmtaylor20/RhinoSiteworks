@@ -5,16 +5,16 @@
  * short, `headline` punchy, and `points` to three or four items.
  */
 export const seasonalSpotlight = {
-  season: 'Late summer / fall 2026',
+  season: 'Winter / spring 2027',
   eyebrow: 'On the schedule right now',
-  headline: 'Getting hunting property ready before the season',
-  copy: 'Late summer and early fall is when hunting land work needs to happen. We are booking trail and access-road maintenance, shooting-lane cutting, food-plot area preparation, firebreak and firelane work, and bush hogging on fields and vacant tracts. Dry ground also makes it a good window for driveway regrading and drainage corrections before winter rain.',
+  headline: 'Clearing land while the brush is down',
+  copy: 'Winter is a good window for clearing and forestry mulching. With the leaves off and vegetation died back, we can see the ground, the trees worth keeping, and the access routes, so the work goes cleaner. We are booking lot and acreage clearing, mulching overgrown tracts, and reclaiming land that got away from its owner. Getting it done now means the property is ready for building, fencing, or planting by spring.',
   points: [
-    'Shooting lanes, trails, and access roads',
-    'Food-plot area preparation',
-    'Firebreaks and firelanes',
-    'Bush hogging fields, pastures, and vacant land',
+    'Lot and acreage clearing',
+    'Forestry mulching of overgrown tracts',
+    'Reclaiming neglected, overgrown property',
+    'Land ready for building or planting by spring',
   ],
-  ctaLabel: 'Get on the fall schedule',
+  ctaLabel: 'Get on the winter schedule',
   ctaHref: '/contact',
 } as const;
