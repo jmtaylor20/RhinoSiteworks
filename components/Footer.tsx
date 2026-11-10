@@ -54,6 +54,12 @@ export function Footer() {
           </div>
         </div>
       </div>
+      <div className="border-t border-white/10">
+        <div className="container-shell py-5 text-xs text-white/40">
+          Designed and managed by{' '}
+          <a href="https://taylormadegrowth.com" className="underline hover:text-white/70">TaylorMade Brands, LLC</a>
+        </div>
+      </div>
     </footer>
   );
 }
